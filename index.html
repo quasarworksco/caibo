@@ -12,7 +12,7 @@
   --B:#080808; --G1:#0f0f0f; --G2:#161616; --G3:#222; --G4:#2e2e2e;
   --W:#fff; --TG:#888;
   --ease:cubic-bezier(0.22,1,0.36,1);
-  --hh:72px;
+  --hh:104px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -31,7 +31,8 @@ body.cursor-hover .cursor-outer{width:58px;height:58px;border-color:var(--Y2);ba
 body.cursor-click .cursor-inner{width:14px;height:14px}
 
 /* ═══ HEADER ═══ */
-.site-header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:rgba(8,8,8,.95);border-bottom:2px solid var(--Y);backdrop-filter:blur(14px)}
+.site-header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:transparent;border-bottom:2px solid transparent;backdrop-filter:blur(0px);transition:background .4s ease,border-color .4s ease,backdrop-filter .4s ease}
+.site-header.scrolled{background:rgba(8,8,8,.95);border-bottom-color:var(--Y);backdrop-filter:blur(14px)}
 .site-logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:6px;color:var(--W);text-decoration:none;display:flex;align-items:center;flex-shrink:0}
 .site-logo em{font-style:normal;color:var(--Y)}
 .logo-dot{width:7px;height:7px;background:var(--Y);border-radius:50%;margin-left:3px;margin-bottom:14px;animation:blink 2.4s ease infinite}
@@ -73,14 +74,14 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 .mobile-nav .mn-cta:hover{padding-left:28px}
 
 /* ═══ HERO ═══ */
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding-top:var(--hh)}
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding-top:0}
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.35) contrast(1.1) saturate(.85);transform:scale(1.06);animation:heroZoom 14s ease forwards}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.45) contrast(1.08) saturate(.9);transform:scale(1.06);animation:heroZoom 16s ease forwards}
 @keyframes heroZoom{to{transform:scale(1)}}
-.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,.88) 0%,rgba(8,8,8,.5) 55%,rgba(8,8,8,.2) 100%),linear-gradient(to top,rgba(8,8,8,.9) 0%,transparent 55%)}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,.82) 0%,rgba(8,8,8,.38) 50%,rgba(8,8,8,.12) 100%),linear-gradient(to top,rgba(8,8,8,.92) 0%,transparent 50%)}
 .hero-slash{position:absolute;top:0;right:38%;width:3px;height:100%;background:linear-gradient(to bottom,transparent,var(--Y),transparent);opacity:.2;z-index:1}
 
-.hero-main{flex:1;display:flex;align-items:center;padding:80px 80px 60px;position:relative;z-index:2}
+.hero-main{flex:1;display:flex;align-items:center;padding:calc(var(--hh) + 80px) 80px 60px;position:relative;z-index:2}
 .hero-content{max-width:640px}
 
 .hero-tag{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-bottom:30px;opacity:0;animation:fadeUp .8s .2s var(--ease) forwards}
@@ -308,7 +309,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
   .mobile-nav{display:flex}
   .site-logo{font-size:1.55rem;letter-spacing:4px}
   /* hero */
-  .hero-main{padding:48px 20px 40px}
+  .hero-main{padding:calc(var(--hh) + 40px) 20px 40px}
   .hero-content{max-width:100%}
   .hero-tag{font-size:.6rem;letter-spacing:3px;margin-bottom:18px;flex-wrap:wrap}
   .hero-h1{font-size:clamp(3.6rem,13vw,5.5rem)}
@@ -369,6 +370,28 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 </head>
 <body>
 
+<!-- SPLASH LOADER -->
+<div id="splash">
+  <div id="splash-inner">
+    <img id="splash-logo" src="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s600" alt="CAIBO Construction"/>
+    <div id="splash-bar-wrap"><div id="splash-bar"></div></div>
+    <p id="splash-tag">Building What Lasts.</p>
+  </div>
+</div>
+
+<style>
+#splash{position:fixed;inset:0;z-index:99999;background:#080808;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease,visibility .7s ease}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+#splash-inner{display:flex;flex-direction:column;align-items:center;gap:36px}
+#splash-logo{width:clamp(180px,40vw,340px);height:auto;opacity:0;transform:scale(.85);transition:opacity .9s ease,transform .9s ease}
+#splash-logo.show{opacity:1;transform:scale(1)}
+#splash-bar-wrap{width:clamp(180px,40vw,340px);height:2px;background:rgba(255,255,255,.1);overflow:hidden}
+#splash-bar{height:100%;width:0%;background:var(--Y);transition:width 1.8s cubic-bezier(0.22,1,0.36,1)}
+#splash-bar.run{width:100%}
+#splash-tag{font-family:'Bebas Neue',sans-serif;font-size:clamp(.9rem,2vw,1.1rem);letter-spacing:8px;color:rgba(255,255,255,.35);text-transform:uppercase;opacity:0;transition:opacity .8s ease .5s}
+#splash-tag.show{opacity:1}
+</style>
+
 <div class="cursor-outer" id="cursorOuter"></div>
 <div class="cursor-inner" id="cursorInner"></div>
 
@@ -378,7 +401,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 
 <!-- HEADER -->
 <header class="site-header">
-  <a href="#home" class="site-logo">CAIBO<em>.</em><div class="logo-dot"></div></a>
+  <a href="#home" class="site-logo"><img src="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s400" alt="CAIBO Construction" style="height:96px;width:auto;object-fit:contain;"/></a>
   <nav>
     <ul class="site-nav">
       <li><a href="#home">Home</a></li>
@@ -404,7 +427,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1920&auto=format&fit=crop" alt="Construction site"/>
+    <img src="https://drive.google.com/thumbnail?id=1e1S7R5DhPLdAClFE2k54ODARQjxy_Ql_&sz=s1920" alt="Construction site"/>
     <div class="hero-bg-overlay"></div>
   </div>
   <div class="hero-slash"></div>
@@ -481,7 +504,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
   </div>
   <div class="services-grid active" id="grid-residential">
     <div class="service-card reveal">
-      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop" alt="Interior"/></div>
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1fIHLl8Uk2NFmouU5rlcvYE-2ILyw2aeT&sz=s1200" alt="Interior"/></div>
       <div class="card-body">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
         <div class="card-num">01</div>
@@ -491,7 +514,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=800&auto=format&fit=crop" alt="Exterior"/></div>
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1CcZYesejXc3QOBYFaUvFgOZWmCrVGyiX&sz=s1200" alt="Exterior"/></div>
       <div class="card-body">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.51-1.2 1.06-2.35 1.66-3.42C9.4 17.5 11.61 17 14 17c4.42 0 8-3.58 8-8V7A24 24 0 0117 8z"/></svg></div>
         <div class="card-num">02</div>
@@ -501,7 +524,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Demolition"/></div>
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=19F_aOQLsV8Ras6i4gU8ViLI0zsx1fv7s&sz=s1200" alt="Demolition"/></div>
       <div class="card-body">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7C5.9 5 5 5.9 5 7v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/></svg></div>
         <div class="card-num">03</div>
@@ -513,7 +536,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
   </div>
   <div class="services-grid" id="grid-commercial">
     <div class="service-card reveal">
-      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop" alt="Property"/></div>
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1VqhdaV0vvCsxopdpaICFpcd0-FXypibS&sz=s1200" alt="Property"/></div>
       <div class="card-body">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div>
         <div class="card-num">01</div>
@@ -523,7 +546,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
       </div>
     </div>
     <div class="service-card reveal">
-      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" alt="Commercial"/></div>
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=16eUSqKQYC7eefWIAeGdXi1YRvBd6jvir&sz=s1200" alt="Commercial"/></div>
       <div class="card-body">
         <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
         <div class="card-num">02</div>
@@ -565,28 +588,32 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
   <div class="slider-track-wrap">
     <div class="slider-track" id="sliderTrack">
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Kitchen Remodel</h4><p>Miami, FL — Residential</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1lV-iX_Q4odIFwomALDl4rsdZreKUMT1u&sz=s1200" alt="Project"/>
+        
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Full Interior Demo</h4><p>Tampa, FL — Commercial</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1S02SZAVyGJPGdMJVAOzAOIXUJ10xJYdQ&sz=s1200" alt="Project"/>
+        
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Site Preparation</h4><p>Orlando, FL — Industrial</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1OkH1_pZhza_9j8uHKoxYJw0HuJgo-c20&sz=s1200" alt="Project"/>
+        
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Exterior Renovation</h4><p>Jacksonville, FL — Residential</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1ypG-BH121FlzP3qsCqxJnR3h554XtlKc&sz=s1200" alt="Project"/>
+        
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Deck &amp; Patio Build</h4><p>Fort Lauderdale, FL</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1a7_ST2rqgoKYLiKYx4YFo7drDRUKa2xu&sz=s1200" alt="Project"/>
+        
       </div>
       <div class="slide">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=900&auto=format&fit=crop" alt="Project"/>
-        <div class="slide-caption"><h4>Structural Demolition</h4><p>St. Petersburg, FL — Commercial</p></div>
+        <img src="https://drive.google.com/thumbnail?id=1tx5YDE_2brY0_ZSyFMu7ChCIULdEJxJ1&sz=s1200" alt="Project"/>
+        
+      </div>
+      <div class="slide">
+        <img src="https://drive.google.com/thumbnail?id=1L7zbGTJRaJf83NZhyWANshWtBKcfJxfq&sz=s1200" alt="Project"/>
+        
       </div>
     </div>
   </div>
@@ -669,7 +696,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
     <div class="c-info">
       <div class="c-info-item">
         <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-        <div><strong>Phone / WhatsApp</strong><span>+1 (813) 772-1375</span></div>
+        <div><strong>Phone / WhatsApp</strong><span>+1 (954) 478-5582</span></div>
       </div>
       <div class="c-info-item">
         <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
@@ -715,7 +742,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-logo">CAIBO<em>.</em></div>
+  <div class="footer-logo"><img src="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s400" alt="CAIBO Construction" style="height:104px;width:auto;object-fit:contain;"/></div>
   <div class="footer-links">
     <a href="#home">Home</a><a href="#services">Services</a>
     <a href="#why-us">Why Us</a><a href="#process">Process</a><a href="#contact">Contact</a>
@@ -861,7 +888,7 @@ function getFormData(){
 function sendWhatsApp(){
   const d=getFormData(),name=[d.fname,d.lname].filter(Boolean).join(' ')||'N/A';
   const lines=[`Hi CAIBO Construction! I'd like a free estimate.`,``,`*Name:* ${name}`,d.phone?`*Phone:* ${d.phone}`:null,d.email?`*Email:* ${d.email}`:null,d.service?`*Service:* ${d.service}`:null,d.message?`*Details:* ${d.message}`:null].filter(l=>l!==null).join('\n');
-  window.open(`https://wa.me/18137721375?text=${encodeURIComponent(lines)}`,'_blank');
+  window.open(`https://wa.me/19544785582?text=${encodeURIComponent(lines)}`,'_blank');
 }
 function sendEmail(){
   const d=getFormData(),name=[d.fname,d.lname].filter(Boolean).join(' ')||'N/A';
@@ -869,6 +896,29 @@ function sendEmail(){
   const body=[`Hi CAIBO Team,`,``,`I'd like to request a free estimate.`,``,`Name: ${name}`,d.phone?`Phone: ${d.phone}`:null,d.email?`Reply Email: ${d.email}`:null,d.service?`Service: ${d.service}`:null,d.message?`\nDetails:\n${d.message}`:null].filter(l=>l!==null).join('\n');
   window.location.href=`mailto:info@caiboconstruction.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
 }
+/* HEADER SCROLL */
+const hdr=document.querySelector('.site-header');
+window.addEventListener('scroll',()=>{
+  hdr.classList.toggle('scrolled',scrollY>60);
+});
+
+/* SPLASH */
+(function(){
+  const splash=document.getElementById('splash');
+  const logo=document.getElementById('splash-logo');
+  const bar=document.getElementById('splash-bar');
+  const tag=document.getElementById('splash-tag');
+  // kick off animations
+  requestAnimationFrame(()=>{
+    logo.classList.add('show');
+    tag.classList.add('show');
+    setTimeout(()=>bar.classList.add('run'),100);
+  });
+  // hide after 2.6s
+  setTimeout(()=>splash.classList.add('hide'),2600);
+  // remove from DOM after fade
+  setTimeout(()=>splash.remove(),3400);
+})();
 </script>
 </body>
 </html>
