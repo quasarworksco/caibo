@@ -301,70 +301,83 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 
 /* ═══ RESPONSIVE MOBILE ═══ */
 @media(max-width:768px){
-  :root{--hh:62px}
+  :root{--hh:72px}
   /* header */
   .site-header{padding:0 18px}
   .site-nav{display:none!important}
   .hamburger{display:flex}
   .mobile-nav{display:flex}
-  .site-logo{font-size:1.55rem;letter-spacing:4px}
-  /* hero */
-  .hero-main{padding:calc(var(--hh) + 40px) 20px 40px}
-  .hero-content{max-width:100%}
-  .hero-tag{font-size:.6rem;letter-spacing:3px;margin-bottom:18px;flex-wrap:wrap}
-  .hero-h1{font-size:clamp(3.6rem,13vw,5.5rem)}
-  .hero-sub{font-size:.88rem;max-width:100%;margin-top:20px}
-  .hero-actions{margin-top:28px;flex-direction:column;align-items:stretch;gap:10px}
-  .btn-prim,.btn-out{justify-content:center;text-align:center;padding:15px 20px;clip-path:none;width:100%}
+  /* hero — ocupa pantalla completa */
+  .hero{min-height:100svh;min-height:100vh}
+  .hero-main{padding:calc(var(--hh) + 32px) 22px 24px;align-items:center;justify-content:center;min-height:calc(100svh - 0px)}
+  .hero-content{max-width:100%;text-align:left}
+  .hero-tag{font-size:.6rem;letter-spacing:3px;margin-bottom:16px;flex-wrap:wrap}
+  .hero-h1{font-size:clamp(3.8rem,15vw,6rem);line-height:.84}
+  .hero-sub{font-size:.86rem;max-width:100%;margin-top:18px;line-height:1.65}
+  .hero-actions{margin-top:26px;flex-direction:column;align-items:stretch;gap:10px}
+  .btn-prim,.btn-out{justify-content:center;text-align:center;padding:16px 20px;clip-path:none;width:100%;font-size:.78rem}
   .hero-slash{display:none}
-  /* stats */
-  .hero-stats{flex-direction:column}
-  .stat{border-right:none;border-bottom:1px solid var(--G3);padding:15px 20px}
-  .stat:last-child{border-bottom:none}
+  .hero-bg-overlay{background:linear-gradient(to bottom,rgba(8,8,8,.55) 0%,rgba(8,8,8,.25) 40%,rgba(8,8,8,.75) 100%)}
+  /* stats — horizontal scroll en mobile */
+  .hero-stats{flex-direction:row;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hero-stats::-webkit-scrollbar{display:none}
+  .stat{flex:0 0 auto;min-width:140px;border-right:1px solid var(--G3);border-bottom:none;padding:14px 18px}
+  .stat:last-child{border-right:none}
+  .stat-n{font-size:1.9rem}
+  .stat-l{font-size:.55rem}
   /* marquee */
-  .mq-item{font-size:.82rem;padding:0 22px;letter-spacing:3px}
+  .mq-item{font-size:.8rem;padding:0 20px;letter-spacing:3px}
   /* services */
-  .services-section{padding:64px 18px}
+  .services-section{padding:56px 18px}
   .services-section::before{font-size:70px}
   .category-tabs{flex-direction:column;gap:3px}
   .tab-btn{clip-path:none!important;padding:13px 22px!important;margin-left:0!important;width:100%;text-align:center}
   .services-grid{grid-template-columns:1fr}
-  /* slider */
-  .slider-header{padding:56px 18px 32px;flex-direction:column;align-items:flex-start;gap:20px}
+  /* slider mejorado */
+  .slider-section{overflow:hidden}
+  .slider-header{padding:48px 18px 28px;flex-direction:column;align-items:flex-start;gap:16px}
   .slider-controls{align-self:flex-end}
-  .slide{min-width:calc(88% - 2px);height:280px}
-  .slider-dots{padding:18px 0 44px}
+  .slider-track-wrap{padding:0}
+  .slide{min-width:calc(100vw - 48px);height:260px;margin-right:12px;border-radius:2px}
+  .slide img{filter:brightness(.75) saturate(.9)}
+  .slide:hover img{filter:brightness(.85) saturate(1)}
+  .slider-dots{padding:16px 0 40px;gap:6px}
+  .slider-dot{width:22px}
+  .slider-dot.active{width:40px}
   /* why */
-  .why-section{padding:64px 18px;grid-template-columns:1fr;gap:44px}
+  .why-section{padding:56px 18px;grid-template-columns:1fr;gap:40px}
   .why-grid{grid-template-columns:1fr}
-  .feat-box{padding:32px 22px}
+  .feat-box{padding:28px 20px}
   /* process */
-  .process-section{padding:64px 18px}
+  .process-section{padding:56px 18px}
   .process-steps{grid-template-columns:1fr 1fr;gap:3px}
-  .process-header{margin-bottom:44px}
-  .step-card{padding:32px 18px}
-  .step-title{font-size:1.15rem}
+  .process-header{margin-bottom:40px}
+  .step-card{padding:28px 14px}
+  .step-title{font-size:1.1rem}
+  .step-num-circle{width:58px;height:58px}
+  .step-num{font-size:1.5rem}
   /* contact */
   .contact-section{grid-template-columns:1fr}
-  .contact-left{padding:56px 20px}
-  .contact-left h2{font-size:2.6rem}
-  .contact-right{padding:56px 20px}
+  .contact-left{padding:48px 20px}
+  .contact-left h2{font-size:2.4rem}
+  .contact-right{padding:40px 20px}
   .form-grid{grid-template-columns:1fr}
   .sp2{grid-column:span 1}
   .form-actions{flex-direction:column}
   .btn-sub,.btn-wa{width:100%;justify-content:center;clip-path:none}
   /* footer */
-  .site-footer{flex-direction:column;text-align:center;padding:26px 18px;gap:12px}
-  .footer-links{gap:14px}
+  .site-footer{flex-direction:column;text-align:center;padding:24px 18px;gap:12px}
+  .footer-links{gap:12px;flex-wrap:wrap;justify-content:center}
   /* misc */
   .scroll-top{bottom:18px;right:18px;width:42px;height:42px;clip-path:none;border-radius:3px}
-  .sec-h{font-size:clamp(2.4rem,9vw,3.8rem);margin-bottom:32px}
+  .sec-h{font-size:clamp(2.2rem,9vw,3.6rem);margin-bottom:28px}
   .slider-header .sec-h{margin-bottom:0}
-  .why-desc{font-size:.9rem}
+  .why-desc{font-size:.88rem}
 }
 @media(max-width:420px){
-  .hero-h1{font-size:3.2rem}
+  .hero-h1{font-size:3.4rem}
   .process-steps{grid-template-columns:1fr}
+  .slide{min-width:calc(100vw - 32px);height:230px}
 }
 </style>
 </head>
@@ -427,7 +440,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="https://drive.google.com/thumbnail?id=1e1S7R5DhPLdAClFE2k54ODARQjxy_Ql_&sz=s1920" alt="Construction site"/>
+    <img src="https://drive.google.com/thumbnail?id=1vNjdEGNJCGO-Tknv-g9mUgE9lt4KfUdR&sz=s1920" alt="Construction site"/>
     <div class="hero-bg-overlay"></div>
   </div>
   <div class="hero-slash"></div>
