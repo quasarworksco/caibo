@@ -48,10 +48,10 @@ body.cursor-hover .cursor-outer{width:58px;height:58px;border-color:var(--Y2);ba
 body.cursor-click .cursor-inner{width:14px;height:14px}
 
 /* ── HEADER ── */
-.site-header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 60px;background:transparent;border-bottom:2px solid transparent;backdrop-filter:blur(0px);transition:background .4s,border-color .4s,backdrop-filter .4s}
+.site-header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:900;display:flex;align-items:center;justify-content:center;padding:0 60px;background:transparent;border-bottom:2px solid transparent;backdrop-filter:blur(0px);transition:background .4s,border-color .4s,backdrop-filter .4s}
 .site-header.scrolled{background:rgba(8,8,8,.95);border-bottom-color:var(--Y);backdrop-filter:blur(14px)}
 .site-logo{text-decoration:none;display:flex;align-items:center;flex-shrink:0}
-.site-logo img{}
+.site-logo img{height:110px;width:auto;object-fit:contain;}
 .site-nav{display:flex;align-items:center;gap:4px;list-style:none}
 .site-nav a{font-weight:700;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:#aaa;text-decoration:none;padding:8px 14px;position:relative;transition:color .25s}
 .site-nav a::after{content:'';position:absolute;bottom:0;left:14px;width:0;height:2px;background:var(--Y);transition:width .3s var(--ease)}
@@ -620,7 +620,7 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 <!-- ══ HEADER ══ -->
 <header class="site-header" id="siteHeader">
   <a href="#home" class="site-logo">
-    <img src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction Services" style="height:80px;width:auto;object-fit:contain;display:block;"/>
+    <img src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction Services"/>
   </a>
   <nav aria-label="Main navigation">
     <ul class="site-nav">
