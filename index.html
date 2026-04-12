@@ -3,365 +3,1267 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CAIBO Construction Services | Coming Soon</title>
-<meta name="description" content="CAIBO Construction Services — Florida's trusted residential & commercial construction company. Something big is coming."/>
-<meta property="og:title" content="CAIBO Construction Services | Coming Soon"/>
-<meta property="og:description" content="Something big is being built. Florida's trusted construction company launches soon."/>
-<meta property="og:image" content="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s1200"/>
+<title>CAIBO Construction Services | Florida Residential & Commercial</title>
+<meta name="description" content="CAIBO Construction Services delivers precision craftsmanship across interior renovations, exterior upgrades, demolition, and full property rehabs throughout Florida. Licensed & insured. Free estimates."/>
+<meta name="keywords" content="construction services Florida, residential renovation, commercial construction, demolition, kitchen remodel, bathroom remodel, flooring, drywall, exterior remodeling, property rehab, CAIBO Construction, Tampa, St. Petersburg, Clearwater, Orlando, Sarasota"/>
+<meta name="author" content="CAIBO Construction Services"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.caiboconstruction.com/"/>
 <meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.caiboconstruction.com/"/>
+<meta property="og:title" content="CAIBO Construction Services | We Build What Lasts"/>
+<meta property="og:description" content="Precision craftsmanship across interior renovations, exterior upgrades, demolition, and full property rehabs throughout Florida. Licensed & insured. Free estimates."/>
+<meta property="og:image" content="https://drive.google.com/thumbnail?id=10rlLrzEJqohwosHrIe9kk2AdcS1r3RJG&sz=s1200"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:site_name" content="CAIBO Construction Services"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="CAIBO Construction Services | We Build What Lasts"/>
+<meta name="twitter:description" content="Interior renovations, exterior upgrades, demolition, and full property rehabs throughout Florida."/>
+<meta name="twitter:image" content="https://drive.google.com/thumbnail?id=10rlLrzEJqohwosHrIe9kk2AdcS1r3RJG&sz=s1200"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"GeneralContractor","name":"CAIBO Construction Services","description":"Precision craftsmanship across interior renovations, exterior upgrades, demolition, and full property rehabs throughout Florida.","url":"https://www.caiboconstruction.com","logo":"https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa","telephone":"+1-954-478-5582","address":{"@type":"PostalAddress","addressRegion":"FL","addressCountry":"US"},"areaServed":{"@type":"State","name":"Florida"},"sameAs":["https://www.instagram.com/caiboconstructionservices","https://www.facebook.com/share/1HApB7TN6R/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --Y:#E6BA21;--Y2:#f5cc4a;
-  --B:#080808;--G1:#0f0f0f;--G2:#161616;--G3:#222;
-  --W:#fff;--TG:#666;
+  --B:#080808;--G1:#0f0f0f;--G2:#161616;--G3:#222;--G4:#2e2e2e;
+  --W:#fff;--TG:#888;
   --ease:cubic-bezier(0.22,1,0.36,1);
+  --hh:clamp(90px,12vw,130px);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden}
-body{font-family:'Barlow',sans-serif;background:var(--B);color:var(--W);cursor:none}
-@media(max-width:768px){body{cursor:auto;overflow:auto}}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--B);color:var(--W);overflow-x:hidden;cursor:none}
+@media(max-width:768px){body{cursor:auto}}
 
-/* NOISE OVERLAY */
-body::before{
-  content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.025;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:200px
+  background-size:200px}
+
+/* ── CURSOR ── */
+.cursor-outer{position:fixed;width:36px;height:36px;border:1.5px solid var(--Y);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),background .3s,border-color .3s;mix-blend-mode:difference}
+.cursor-inner{position:fixed;width:6px;height:6px;background:var(--Y);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
+body.cursor-hover .cursor-outer{width:58px;height:58px;border-color:var(--Y2);background:rgba(230,186,33,.07)}
+body.cursor-click .cursor-inner{width:14px;height:14px}
+
+/* ── HEADER ── */
+.site-header{position:fixed;top:0;left:0;right:0;height:var(--hh);z-index:900;display:flex;align-items:center;justify-content:center;padding:0 60px;background:transparent;border-bottom:2px solid transparent;backdrop-filter:blur(0px);transition:background .4s,border-color .4s,backdrop-filter .4s}
+.site-header.scrolled{background:rgba(8,8,8,.95);border-bottom-color:var(--Y);backdrop-filter:blur(14px)}
+.site-logo{text-decoration:none;display:flex;align-items:center;flex-shrink:0}
+.site-logo img{height:clamp(100px,14vw,200px);width:auto;object-fit:contain;}
+.site-nav{display:flex;align-items:center;gap:4px;list-style:none}
+.site-nav a{font-weight:700;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#aaa;text-decoration:none;padding:8px 10px;position:relative;white-space:nowrap;transition:color .25s}
+.site-nav a::after{content:'';position:absolute;bottom:0;left:14px;width:0;height:2px;background:var(--Y);transition:width .3s var(--ease)}
+.site-nav a:hover{color:var(--Y)}
+.site-nav a:hover::after{width:calc(100% - 28px)}
+.nav-cta{background:var(--Y)!important;color:var(--B)!important;margin-left:8px!important;font-weight:900!important;letter-spacing:2px!important;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)!important;padding:10px 32px!important;transition:background .25s,transform .2s!important;white-space:nowrap!important;}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--Y2)!important;transform:scale(1.04)!important}
+
+/* ── FLOATING HAMBURGER ── */
+.fab-menu{position:fixed;bottom:32px;right:32px;z-index:9000;width:58px;height:58px;background:var(--Y);border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);transition:background .25s,transform .2s,box-shadow .3s;box-shadow:0 8px 32px rgba(230,186,33,.35);padding:0}
+.fab-menu:hover{background:var(--Y2);transform:scale(1.07);box-shadow:0 12px 40px rgba(230,186,33,.5)}
+.fab-menu span{display:block;width:24px;height:2px;background:var(--B);border-radius:1px;transform-origin:center;transition:transform .4s var(--ease),opacity .3s,width .4s var(--ease)}
+.fab-menu span:nth-child(2){width:16px}
+.fab-menu.open span:nth-child(1){transform:translateY(7px) rotate(45deg);width:24px}
+.fab-menu.open span:nth-child(2){opacity:0;transform:translateX(-10px)}
+.fab-menu.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);width:24px}
+@media(max-width:768px){.fab-menu{bottom:24px;right:20px;width:52px;height:52px}}
+
+/* ── FULLSCREEN NAV OVERLAY ── */
+.nav-overlay{position:fixed;inset:0;z-index:8500;background:rgba(8,8,8,.0);backdrop-filter:blur(0px);pointer-events:none;transition:background .5s,backdrop-filter .5s}
+.nav-overlay.open{background:rgba(8,8,8,.6);backdrop-filter:blur(6px);pointer-events:all}
+
+.fullscreen-nav{position:fixed;inset:0;z-index:8600;display:flex;pointer-events:none;transform:translateX(-100%);transition:transform .6s var(--ease)}
+.fullscreen-nav.open{transform:translateX(0);pointer-events:all}
+
+.fn-left{width:min(480px,85vw);background:var(--G1);border-right:2px solid var(--Y);display:flex;flex-direction:column;overflow-y:auto;position:relative}
+.fn-left::before{content:'CAIBO';position:absolute;bottom:-10px;left:-15px;font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,18vw,160px);color:rgba(230,186,33,.04);white-space:nowrap;letter-spacing:.1em;pointer-events:none;line-height:1}
+
+.fn-header{padding:36px 40px 28px;border-bottom:1px solid var(--G3);flex-shrink:0}
+.fn-logo img{height:100px;width:auto;object-fit:contain;}
+
+.fn-nav-links{padding:36px 40px;flex:1}
+.fn-nav-links a{display:flex;align-items:center;gap:18px;font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);letter-spacing:3px;color:rgba(255,255,255,.5);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:color .3s,gap .3s,padding-left .3s;position:relative;overflow:hidden}
+.fn-nav-links a .fn-num{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:4px;color:var(--Y);opacity:.7;min-width:28px;transition:opacity .3s}
+.fn-nav-links a:hover{color:var(--Y);gap:26px;padding-left:8px}
+.fn-nav-links a:hover .fn-num{opacity:1}
+.fn-nav-links a:last-child{border-bottom:none}
+
+/* stagger entrance */
+.fullscreen-nav.open .fn-nav-links a{animation:fnSlideIn .5s var(--ease) both}
+.fullscreen-nav.open .fn-nav-links a:nth-child(1){animation-delay:.1s}
+.fullscreen-nav.open .fn-nav-links a:nth-child(2){animation-delay:.15s}
+.fullscreen-nav.open .fn-nav-links a:nth-child(3){animation-delay:.2s}
+.fullscreen-nav.open .fn-nav-links a:nth-child(4){animation-delay:.25s}
+.fullscreen-nav.open .fn-nav-links a:nth-child(5){animation-delay:.3s}
+.fullscreen-nav.open .fn-nav-links a:nth-child(6){animation-delay:.35s}
+@keyframes fnSlideIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+
+.fn-bottom{padding:28px 40px;border-top:1px solid var(--G3);flex-shrink:0}
+.fn-cta-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:var(--Y);color:var(--B);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.85rem;letter-spacing:4px;text-transform:uppercase;text-decoration:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);margin-bottom:22px;transition:background .25s,transform .2s}
+.fn-cta-btn:hover{background:var(--Y2);transform:translateY(-2px)}
+.fn-contact-info{display:flex;flex-direction:column;gap:10px}
+.fn-contact-row{display:flex;align-items:center;gap:10px;font-size:.9rem;color:rgba(255,255,255,.5)}
+.fn-contact-row svg{width:14px;height:14px;fill:var(--Y);flex-shrink:0}
+.fn-contact-row a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+.fn-contact-row a:hover{color:var(--Y)}
+.fn-socials{display:flex;gap:10px;margin-top:16px}
+.fn-social{width:36px;height:36px;background:var(--G3);display:flex;align-items:center;justify-content:center;clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);transition:background .25s}
+.fn-social:hover{background:var(--Y)}
+.fn-social:hover svg{fill:var(--B)}
+.fn-social svg{width:15px;height:15px;fill:rgba(255,255,255,.5);transition:fill .25s}
+
+.fn-right{flex:1;position:relative;overflow:hidden}
+.fn-right-bg{position:absolute;inset:0}
+.fn-right-bg img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:saturate(.3)}
+.fn-right-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--G1) 0%,transparent 100%)}
+.fn-right-content{position:relative;z-index:1;padding:56px 48px;height:100%;display:flex;flex-direction:column;justify-content:flex-end}
+.fn-area-title{font-size:.6rem;letter-spacing:5px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-bottom:16px}
+.fn-areas{display:flex;flex-wrap:wrap;gap:8px}
+.fn-area-tag{font-family:'Barlow Condensed',sans-serif;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:6px 14px;transition:color .25s,border-color .25s}
+.fn-area-tag:hover{color:var(--Y);border-color:rgba(230,186,33,.3)}
+@media(max-width:900px){.fn-right{display:none}}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;padding-top:0}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.42) contrast(1.1) saturate(.85);transform:scale(1.06);animation:heroZoom 18s ease forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(8,8,8,.88) 0%,rgba(8,8,8,.4) 55%,rgba(8,8,8,.1) 100%),linear-gradient(to top,rgba(8,8,8,.95) 0%,transparent 55%)}
+.hero-slash{position:absolute;top:0;right:38%;width:3px;height:100%;background:linear-gradient(to bottom,transparent,var(--Y),transparent);opacity:.18;z-index:1}
+
+.hero-main{flex:1;display:flex;align-items:center;padding:calc(var(--hh) + 80px) 80px 60px;position:relative;z-index:2}
+.hero-content{max-width:660px}
+
+/* ── HERO TEXT ENTRANCE ANIMATIONS ── */
+.hero-tag{
+  display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-bottom:30px;
+  opacity:0;
+  animation:tagReveal 1s .4s var(--ease) forwards;
+  clip-path:inset(0 100% 0 0);
 }
-
-/* CURSOR */
-.cursor-outer{position:fixed;width:32px;height:32px;border:1.5px solid var(--Y);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease),background .3s;mix-blend-mode:difference}
-.cursor-inner{position:fixed;width:5px;height:5px;background:var(--Y);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .15s,height .15s}
-body.c-hover .cursor-outer{width:52px;height:52px;background:rgba(230,186,33,.08)}
-body.c-click .cursor-inner{width:12px;height:12px}
-
-/* ── SPLASH ── */
-#splash{
-  position:fixed;inset:0;z-index:99999;background:var(--B);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:40px;
-  transition:opacity .8s ease,visibility .8s ease;
+@keyframes tagReveal{
+  0%{opacity:0;clip-path:inset(0 100% 0 0);transform:translateY(8px)}
+  30%{opacity:1}
+  100%{opacity:1;clip-path:inset(0 0% 0 0);transform:none}
 }
-#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
-#splash-logo{width:clamp(200px,38vw,320px);height:auto;opacity:0;transform:scale(.88);transition:opacity .9s ease,transform .9s ease}
-#splash-logo.show{opacity:1;transform:scale(1)}
-#splash-bar-wrap{width:clamp(200px,38vw,320px);height:2px;background:rgba(255,255,255,.08);overflow:hidden}
-#splash-bar{height:100%;width:0%;background:var(--Y);transition:width 1.9s cubic-bezier(0.22,1,0.36,1)}
-#splash-bar.run{width:100%}
-#splash-tag{font-family:'Bebas Neue',sans-serif;font-size:clamp(.85rem,1.8vw,1rem);letter-spacing:10px;color:rgba(255,255,255,.25);text-transform:uppercase;opacity:0;transition:opacity .8s .5s}
-#splash-tag.show{opacity:1}
-
-/* ── BACKGROUND ── */
-.bg{position:fixed;inset:0;z-index:0}
-.bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.28) contrast(1.1) saturate(.6);transform:scale(1.04);animation:bgZoom 20s ease forwards}
-@keyframes bgZoom{to{transform:scale(1)}}
-.bg-overlay{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to right, rgba(8,8,8,.95) 0%, rgba(8,8,8,.5) 55%, rgba(8,8,8,.2) 100%),
-    linear-gradient(to top, rgba(8,8,8,.98) 0%, transparent 60%);
-}
-
-/* diagonal accent line */
-.bg-line{position:absolute;top:0;right:30%;width:2px;height:100%;background:linear-gradient(to bottom,transparent 0%,rgba(230,186,33,.15) 30%,rgba(230,186,33,.3) 50%,rgba(230,186,33,.15) 70%,transparent 100%);z-index:2}
-
-/* ── MAIN LAYOUT ── */
-.page{
-  position:relative;z-index:10;
-  height:100vh;
-  display:grid;
-  grid-template-rows:auto 1fr auto;
-  padding:0;
-  overflow:hidden;
-}
-@media(max-width:768px){
-  .page{height:auto;min-height:100svh;display:flex;flex-direction:column}
-}
-
-/* ── TOP BAR ── */
-.topbar{
-  padding:28px 60px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  flex-shrink:0;
-  opacity:0;animation:fadeD .9s 2.9s var(--ease) forwards;
-}
-.topbar-logo img{height:72px;width:auto;object-fit:contain}
-.topbar-tag{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:5px;text-transform:uppercase;color:var(--TG);display:flex;align-items:center;gap:10px}
-.topbar-tag::before{content:'';width:30px;height:1px;background:var(--Y)}
-@media(max-width:768px){.topbar{padding:20px 22px}.topbar-logo img{height:56px}.topbar-tag{display:none}}
-
-/* ── CENTER CONTENT ── */
-.center{
-  display:flex;align-items:center;
-  padding:0 60px;
-  flex:1;
-}
-@media(max-width:768px){.center{padding:32px 22px 24px}}
-
-.content{max-width:700px}
-
-.eyebrow{
-  display:inline-flex;align-items:center;gap:14px;
-  font-size:.68rem;letter-spacing:6px;text-transform:uppercase;color:var(--Y);font-weight:700;
-  margin-bottom:28px;
-  opacity:0;clip-path:inset(0 100% 0 0);
-  animation:revealEye 1s 3s var(--ease) forwards;
-}
-.eyebrow::before{content:'';width:40px;height:2px;background:var(--Y);flex-shrink:0;animation:lineGrow 1s 3s var(--ease) forwards;transform:scaleX(0);transform-origin:left}
-@keyframes revealEye{0%{opacity:0;clip-path:inset(0 100% 0 0)}20%{opacity:1}100%{opacity:1;clip-path:inset(0 0% 0 0)}}
+.hero-tag::before{content:'';width:44px;height:2px;background:var(--Y);flex-shrink:0;animation:lineGrow 1s .4s var(--ease) forwards;transform:scaleX(0);transform-origin:left}
 @keyframes lineGrow{to{transform:scaleX(1)}}
 
-.main-h{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(4rem,11vw,11rem);
-  line-height:.84;letter-spacing:2px;
-  margin-bottom:32px;
-}
-.main-h .hl{display:block;overflow:hidden}
-.main-h .hl-inner{
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,10vw,10.5rem);line-height:.86;letter-spacing:3px}
+.hero-h1 .h1-line{display:block;overflow:hidden}
+.hero-h1 .h1-inner{
   display:block;
-  opacity:0;transform:translateY(105%) skewY(3deg);
-  animation:lineUp .95s var(--ease) forwards;
+  opacity:0;
+  transform:translateY(100%) skewY(4deg);
+  animation:lineSlide .9s var(--ease) forwards;
 }
-.main-h .hl:nth-child(1) .hl-inner{animation-delay:3.1s}
-.main-h .hl:nth-child(2) .hl-inner{animation-delay:3.28s}
-.main-h .hl:nth-child(3) .hl-inner{animation-delay:3.46s}
-@keyframes lineUp{to{opacity:1;transform:none}}
-.main-h .acc{color:var(--Y)}
-.main-h .out{-webkit-text-stroke:2px rgba(230,186,33,.6);color:transparent}
-
-.sub{
-  font-size:clamp(.88rem,.95rem,1rem);color:rgba(255,255,255,.5);line-height:1.8;
-  max-width:400px;
-  border-left:2px solid rgba(230,186,33,.4);padding-left:20px;
-  margin-bottom:44px;
-  opacity:0;animation:fadeUp .9s 3.8s var(--ease) forwards;
+.hero-h1 .h1-line:nth-child(1) .h1-inner{animation-delay:.55s}
+.hero-h1 .h1-line:nth-child(2) .h1-inner{animation-delay:.72s}
+.hero-h1 .h1-line:nth-child(3) .h1-inner{animation-delay:.89s}
+@keyframes lineSlide{
+  0%{opacity:0;transform:translateY(100%) skewY(4deg)}
+  100%{opacity:1;transform:translateY(0) skewY(0)}
 }
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes fadeD{from{opacity:0}to{opacity:1}}
+.hero-h1 .acc{color:var(--Y)}
+.hero-h1 .outline{-webkit-text-stroke:2px rgba(230,186,33,.75);color:transparent}
 
-/* CONTACT ROW */
-.contact-row{
-  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
-  opacity:0;animation:fadeUp .9s 4s var(--ease) forwards;
+.hero-sub{
+  margin-top:28px;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.75;max-width:440px;
+  border-left:3px solid var(--Y);padding-left:22px;
+  opacity:0;
+  animation:subFade 1s 1.1s var(--ease) forwards;
 }
-.cta-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 36px;
-  background:var(--Y);color:var(--B);
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:4px;text-transform:uppercase;text-decoration:none;
-  clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);
-  position:relative;overflow:hidden;
-  transition:transform .2s,letter-spacing .25s;
+@keyframes subFade{
+  0%{opacity:0;transform:translateX(-20px)}
+  100%{opacity:1;transform:none}
 }
-.cta-btn::before{content:'';position:absolute;inset:0;background:var(--Y2);transform:translateX(-100%);transition:transform .35s var(--ease)}
-.cta-btn:hover::before{transform:translateX(0)}
-.cta-btn span,.cta-btn svg{position:relative;z-index:1}
-.cta-btn svg{transition:transform .3s}
-.cta-btn:hover{transform:translateY(-3px);letter-spacing:5px}
-.cta-btn:hover svg{transform:translateX(4px)}
 
-.wa-btn{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:15px 26px;
-  background:transparent;color:rgba(255,255,255,.6);
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;
-  border:1px solid rgba(255,255,255,.15);
-  clip-path:polygon(9px 0,100% 0,calc(100% - 9px) 100%,0 100%);
-  transition:border-color .25s,color .25s,transform .2s;
+.hero-actions{
+  margin-top:46px;display:flex;gap:16px;flex-wrap:wrap;
+  opacity:0;
+  animation:actionsPop .8s 1.3s var(--ease) forwards;
 }
-.wa-btn:hover{border-color:var(--Y);color:var(--Y);transform:translateY(-3px)}
-.wa-btn svg{width:14px;height:14px;fill:currentColor}
-
-/* ── BOTTOM BAR ── */
-.bottom{
-  padding:22px 60px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
-  border-top:1px solid rgba(255,255,255,.06);
-  flex-shrink:0;
-  opacity:0;animation:fadeD .9s 4.1s var(--ease) forwards;
+@keyframes actionsPop{
+  0%{opacity:0;transform:translateY(24px)}
+  100%{opacity:1;transform:none}
 }
-@media(max-width:768px){.bottom{padding:20px 22px;flex-direction:column;align-items:flex-start;gap:14px}}
 
-.bottom-areas{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.bottom-area-label{font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-right:4px}
-.bottom-area{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);transition:color .2s;cursor:default}
-.bottom-area:hover{color:var(--Y)}
-.bottom-area+.bottom-area::before{content:'·';margin-right:8px;color:rgba(255,255,255,.12)}
+.hero-scroll{position:absolute;bottom:130px;right:56px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;opacity:0;animation:fadeUp .9s 1.6s var(--ease) forwards}
+.hero-scroll span{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,.3);writing-mode:vertical-rl}
+.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--Y),transparent);animation:scrollP 2s ease-in-out infinite}
+@keyframes scrollP{0%,100%{opacity:1;transform:scaleY(1)}50%{opacity:.2;transform:scaleY(.3)}}
 
-.bottom-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
-.bottom-copy{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.18)}
-.social-links{display:flex;gap:8px}
-.social-link{
-  width:32px;height:32px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  display:flex;align-items:center;justify-content:center;
-  clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);
-  text-decoration:none;transition:background .25s,border-color .25s;
+/* hero stats */
+.hero-stats{position:relative;z-index:3;display:flex;background:rgba(8,8,8,.93);border-top:2px solid var(--Y);backdrop-filter:blur(8px);opacity:0;animation:fadeUp .9s 1.4s var(--ease) forwards}
+.stat{flex:1;padding:20px 26px;border-right:1px solid var(--G3);display:flex;align-items:center;gap:15px;transition:background .3s}
+.stat:last-child{border-right:none}
+.stat:hover{background:rgba(255,255,255,.03)}
+.stat-icon{width:38px;height:38px;flex-shrink:0;background:rgba(230,186,33,.1);display:flex;align-items:center;justify-content:center;clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%)}
+.stat-icon svg{width:18px;height:18px;fill:var(--Y)}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.3rem;color:var(--Y);line-height:1}
+.stat-l{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--TG);margin-top:3px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+
+/* ── BUTTONS ── */
+.btn-prim{padding:16px 40px;background:var(--Y);color:var(--B);font-weight:900;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);display:inline-flex;align-items:center;justify-content:center;gap:12px;position:relative;overflow:hidden;transition:transform .2s,letter-spacing .3s}
+.btn-prim::before{content:'';position:absolute;inset:0;background:var(--Y2);transform:translateX(-100%);transition:transform .35s var(--ease)}
+.btn-prim:hover::before{transform:translateX(0)}
+.btn-prim span,.btn-prim svg{position:relative;z-index:1}
+.btn-prim svg{transition:transform .3s}
+.btn-prim:hover{transform:translateY(-3px);letter-spacing:4px}
+.btn-prim:hover svg{transform:translateX(5px)}
+.btn-out{padding:16px 36px;background:transparent;color:var(--W);font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--G4);display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:border-color .3s,color .3s,transform .2s}
+.btn-out:hover{border-color:var(--Y);color:var(--Y);transform:translateY(-3px)}
+.btn-out svg{transition:transform .3s}
+.btn-out:hover svg{transform:translateX(4px)}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.from-left{transform:translateX(-50px)}
+.reveal.from-right{transform:translateX(50px)}
+.reveal.from-bottom{transform:translateY(60px)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.40s}
+
+/* ── MARQUEE ── */
+.marquee-wrap{background:var(--Y);overflow:hidden;padding:14px 0;position:relative;z-index:10}
+.marquee-track{display:flex;animation:marquee 30s linear infinite;white-space:nowrap;width:max-content}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{display:inline-flex;align-items:center;gap:18px;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:5px;color:var(--B);padding:0 36px}
+.mq-dot{width:5px;height:5px;background:var(--B);border-radius:50%;opacity:.45;flex-shrink:0}
+
+/* ── SECTION LABELS ── */
+.sec-label{display:inline-flex;align-items:center;gap:14px;font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-bottom:15px}
+.sec-label::before{content:'';width:44px;height:2px;background:var(--Y)}
+.sec-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5.5vw,6rem);line-height:.88;letter-spacing:2px;margin-bottom:52px}
+.sec-h span{color:var(--Y)}
+
+/* ── SERVICES ── */
+.services-section{padding:120px 80px;background:var(--G1);position:relative;overflow:hidden}
+.services-section::before{content:'SERVICES';position:absolute;top:30px;left:50%;transform:translateX(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(70px,15vw,200px);color:rgba(230,186,33,.03);white-space:nowrap;letter-spacing:.1em;pointer-events:none;user-select:none;z-index:0}
+.category-tabs{display:flex;margin-bottom:48px;flex-wrap:wrap;gap:3px}
+.tab-btn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:4px;text-transform:uppercase;padding:13px 34px;border:none;cursor:pointer;background:var(--G3);color:var(--TG);transition:all .25s}
+.tab-btn.residential{clip-path:polygon(0 0,calc(100% - 14px) 0,100% 100%,0 100%);padding-right:48px}
+.tab-btn.commercial{clip-path:polygon(14px 0,100% 0,100% 100%,0 100%);padding-left:48px;margin-left:-14px}
+.tab-btn.active{background:var(--Y);color:var(--B)}
+.tab-btn:hover:not(.active){background:var(--G4);color:var(--W)}
+.services-grid{display:none;grid-template-columns:repeat(3,1fr);gap:3px}
+.services-grid.active{display:grid}
+.service-card{background:var(--G2);position:relative;overflow:hidden;cursor:pointer;transition:transform .35s var(--ease),background .3s,box-shadow .35s;display:flex;flex-direction:column}
+.service-card:hover{transform:translateY(-7px);background:var(--G3);z-index:2;box-shadow:0 20px 44px rgba(0,0,0,.55)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--Y);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);z-index:2}
+.service-card:hover::before{transform:scaleX(1)}
+.card-img-wrap{overflow:hidden;height:200px;flex-shrink:0}
+.card-img{width:100%;height:200px;object-fit:cover;filter:brightness(.5) saturate(.7);transition:filter .4s,transform .5s;display:block}
+.service-card:hover .card-img{filter:brightness(.7) saturate(.95);transform:scale(1.05)}
+.card-body{padding:26px 24px 30px;border:1px solid var(--G3);border-top:none;flex:1;display:flex;flex-direction:column}
+.card-icon{width:44px;height:44px;background:rgba(230,186,33,.1);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%);display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;transition:background .3s}
+.service-card:hover .card-icon{background:rgba(230,186,33,.22)}
+.card-icon svg{width:21px;height:21px;fill:var(--Y)}
+.card-num{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:4px;color:var(--Y);opacity:.6;margin-bottom:4px}
+.card-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:2px;color:var(--W);line-height:1;margin-bottom:11px;transition:color .3s}
+.service-card:hover .card-title{color:var(--Y)}
+.card-desc{font-size:.85rem;color:var(--TG);line-height:1.65;flex:1;margin-bottom:18px}
+.card-link{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--Y);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+.card-link::after{content:'→';font-size:1rem}
+.card-link:hover{gap:14px}
+
+/* ── SERVICE AREA SECTION ── */
+.area-section{padding:80px 80px;background:var(--B);border-top:1px solid var(--G3);position:relative;overflow:hidden}
+.area-section::before{content:'FLORIDA';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,18vw,220px);color:rgba(230,186,33,.03);white-space:nowrap;letter-spacing:.08em;pointer-events:none}
+.area-inner{display:flex;align-items:center;gap:60px;flex-wrap:wrap}
+.area-left{flex-shrink:0}
+.area-left .sec-label{margin-bottom:10px}
+.area-left h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.5rem);line-height:.9;letter-spacing:2px}
+.area-left h3 span{color:var(--Y)}
+.area-tags{display:flex;flex-wrap:wrap;gap:8px;flex:1;min-width:260px}
+.area-tag{font-family:'Barlow Condensed',sans-serif;font-size:.88rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.55);background:var(--G2);border:1px solid var(--G3);border-bottom:2px solid var(--G3);padding:10px 20px;transition:color .25s,border-color .25s,background .25s,transform .25s;cursor:default}
+.area-tag:hover{color:var(--Y);border-color:rgba(230,186,33,.4);background:rgba(230,186,33,.04);transform:translateY(-2px)}
+
+/* ── PHOTO SLIDER ── */
+.slider-section{padding:0;background:var(--B);position:relative;overflow:hidden}
+.slider-progress{height:3px;background:var(--G3);position:relative;overflow:hidden}
+.slider-progress-bar{position:absolute;left:0;top:0;bottom:0;background:var(--Y);width:0;transition:width linear}
+.slider-header{padding:76px 80px 44px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.slider-header-text .sec-h{margin-bottom:0}
+.slider-controls{display:flex;gap:8px;flex-shrink:0;align-self:flex-end}
+.slider-btn{width:48px;height:48px;border:1.5px solid var(--G4);background:none;color:var(--W);cursor:pointer;display:flex;align-items:center;justify-content:center;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%);transition:background .25s,border-color .25s}
+.slider-btn:hover{background:var(--Y);border-color:var(--Y)}
+.slider-btn:hover svg{fill:var(--B)}
+.slider-btn svg{width:22px;height:22px;fill:var(--W);transition:fill .25s}
+.slider-track-wrap{overflow:hidden}
+.slider-track{display:flex;transition:transform .7s var(--ease)}
+
+/* BIGGER SLIDES */
+.slide{min-width:calc(50% - 2px);margin-right:3px;position:relative;overflow:hidden;height:520px;flex-shrink:0}
+.slide img{width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(.8);transition:filter .4s,transform .5s}
+.slide:hover img{filter:brightness(.9) saturate(1.05);transform:scale(1.04)}
+.slide-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.92),transparent);padding:40px 24px 22px;transform:translateY(10px);opacity:0;transition:transform .35s var(--ease),opacity .35s}
+.slide:hover .slide-caption{transform:none;opacity:1}
+.slide-caption h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:3px;color:var(--Y)}
+.slide-caption p{font-size:.76rem;color:rgba(255,255,255,.55);margin-top:3px}
+
+.slider-dots{display:flex;justify-content:center;gap:8px;padding:28px 0 60px}
+.slider-dot{width:28px;height:3px;background:var(--G4);cursor:pointer;transition:background .3s,width .35s var(--ease);clip-path:polygon(2px 0,100% 0,calc(100% - 2px) 100%,0 100%)}
+.slider-dot.active{background:var(--Y);width:48px}
+
+/* ── WHY US ── */
+.why-section{padding:130px 80px;background:var(--B);display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;position:relative;overflow:hidden}
+.why-section::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:repeating-linear-gradient(-60deg,var(--Y) 0,var(--Y) 20px,transparent 20px,transparent 40px)}
+.why-desc{font-size:.95rem;color:var(--TG);line-height:1.8;border-left:3px solid var(--Y);padding-left:22px;margin:24px 0 36px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.feat-box{background:var(--G1);padding:40px 30px;border-top:2px solid transparent;transition:background .3s,border-color .3s;position:relative;overflow:hidden}
+.feat-box::after{content:'';position:absolute;bottom:0;right:0;width:0;height:0;border-style:solid;border-width:0 0 36px 36px;border-color:transparent transparent rgba(230,186,33,.07) transparent;transition:border-width .35s}
+.feat-box:hover::after{border-width:0 0 60px 60px}
+.feat-box:hover{background:var(--G2);border-color:var(--Y)}
+.feat-ico-wrap{width:42px;height:42px;background:rgba(230,186,33,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%);transition:background .3s}
+.feat-box:hover .feat-ico-wrap{background:rgba(230,186,33,.22)}
+.feat-ico{width:21px;height:21px;fill:var(--Y)}
+.feat-box h4{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;margin-bottom:9px;transition:color .3s}
+.feat-box:hover h4{color:var(--Y)}
+.feat-box p{font-size:.9rem;color:var(--TG);line-height:1.7}
+
+/* ── PROCESS ── */
+.process-section{padding:120px 80px;background:var(--G1);position:relative;overflow:hidden}
+.process-section::before{content:'PROCESS';position:absolute;bottom:10px;right:-20px;font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,13vw,180px);color:rgba(230,186,33,.03);white-space:nowrap;letter-spacing:.1em;pointer-events:none}
+.process-header{text-align:center;margin-bottom:72px}
+.process-header .sec-label{justify-content:center}
+.process-header .sec-label::before{display:none}
+.process-header .sec-label::after{content:'';width:44px;height:2px;background:var(--Y)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.step-card{background:var(--G2);padding:42px 26px;text-align:center;position:relative;transition:background .3s,transform .35s var(--ease)}
+.step-card:hover{background:var(--G3);transform:translateY(-7px)}
+.step-num-circle{width:74px;height:74px;margin:0 auto 24px;border:1.5px solid rgba(230,186,33,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--G1);transition:border-color .3s,background .3s}
+.step-card:hover .step-num-circle{border-color:var(--Y);background:rgba(230,186,33,.08)}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;color:var(--Y);line-height:1}
+.step-icon{width:25px;height:25px;fill:var(--Y);margin:0 auto 15px;display:block}
+.step-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;margin-bottom:11px;transition:color .3s}
+.step-card:hover .step-title{color:var(--Y)}
+.step-desc{font-size:.81rem;color:var(--TG);line-height:1.7}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--G1);display:grid;grid-template-columns:330px 1fr;position:relative;overflow:hidden}
+.contact-section::before{content:'CONTACT';position:absolute;bottom:-30px;right:-10px;font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,14vw,180px);color:rgba(230,186,33,.03);white-space:nowrap;letter-spacing:.08em;pointer-events:none;z-index:0}
+.contact-left{background:var(--Y);padding:74px 42px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:1}
+.contact-left-label{font-size:.66rem;letter-spacing:5px;text-transform:uppercase;font-weight:700;color:rgba(0,0,0,.4);margin-bottom:11px}
+.contact-left h2{font-family:'Bebas Neue',sans-serif;font-size:3.4rem;line-height:.88;letter-spacing:3px;color:var(--B);margin-bottom:16px}
+.contact-left-sub{font-size:.87rem;color:rgba(0,0,0,.55);line-height:1.65;margin-bottom:32px}
+.c-info{display:flex;flex-direction:column;gap:18px}
+.c-info-item{display:flex;gap:13px;align-items:flex-start}
+.c-icon{width:34px;height:34px;flex-shrink:0;background:rgba(0,0,0,.12);clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);display:flex;align-items:center;justify-content:center}
+.c-icon svg{width:14px;height:14px;fill:var(--B)}
+.c-info-item strong{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.4);display:block;margin-bottom:3px}
+.c-info-item span{font-size:.9rem;font-weight:700;color:var(--B)}
+.contact-socials{display:flex;gap:8px;margin-top:20px}
+.contact-social{width:38px;height:38px;background:rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);text-decoration:none;transition:background .25s}
+.contact-social:hover{background:rgba(0,0,0,.25)}
+.contact-social svg{width:16px;height:16px;fill:var(--B)}
+.contact-left-deco{margin-top:32px;height:5px;background:repeating-linear-gradient(-60deg,rgba(0,0,0,.15) 0,rgba(0,0,0,.15) 12px,transparent 12px,transparent 24px)}
+.contact-right{padding:74px 56px;position:relative;z-index:1}
+.contact-right h3{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;letter-spacing:3px;color:var(--W);margin-bottom:32px}
+.contact-right h3 span{color:var(--Y)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sp2{grid-column:span 2}
+.ff{display:flex;flex-direction:column}
+.ff label{font-size:.63rem;letter-spacing:3px;text-transform:uppercase;color:var(--Y);font-weight:700;margin-bottom:7px}
+.ff input,.ff select,.ff textarea{background:var(--G2);border:1px solid var(--G3);border-bottom:2px solid var(--G3);padding:13px 15px;color:var(--W);font-family:'Barlow',sans-serif;font-size:.88rem;transition:border-color .25s,background .25s;outline:none;width:100%;border-radius:0;-webkit-appearance:none}
+.ff input:focus,.ff select:focus,.ff textarea:focus{border-bottom-color:var(--Y);background:var(--G3)}
+.ff input::placeholder,.ff textarea::placeholder{color:#333}
+.ff select option{background:var(--G1)}
+.ff textarea{resize:vertical;min-height:110px}
+.form-actions{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+.btn-sub{flex:1;min-width:160px;padding:17px;background:var(--Y);color:var(--B);border:none;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:4px;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .25s,letter-spacing .25s,transform .2s;display:flex;align-items:center;justify-content:center;gap:9px}
+.btn-sub:hover{background:var(--Y2);letter-spacing:5px;transform:translateY(-2px)}
+.btn-sub svg{width:16px;height:16px;fill:var(--B);flex-shrink:0}
+.btn-wa{padding:17px 22px;background:#1DA851;color:var(--W);border:none;font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:900;letter-spacing:3px;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .25s,transform .2s;display:flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-wa:hover{background:#17a346;transform:translateY(-2px)}
+.btn-wa svg{width:16px;height:16px;fill:var(--W)}
+.form-note{font-size:.68rem;color:#444;margin-top:11px;letter-spacing:1px;text-align:center}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--B);border-top:3px solid var(--Y);padding:56px 80px 28px}
+.footer-top{display:flex;gap:60px;flex-wrap:wrap;margin-bottom:40px}
+.footer-col{flex:1;min-width:160px}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--Y);margin-bottom:16px;font-weight:700}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li{font-size:.8rem;color:rgba(255,255,255,.4);letter-spacing:1px}
+.footer-col-areas{display:flex;flex-wrap:wrap;gap:6px}
+.footer-col-areas span{font-size:.75rem;color:rgba(255,255,255,.35);letter-spacing:1px}
+.footer-col-areas span:not(:last-child)::after{content:' ·';color:var(--Y);margin-left:6px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--G3);padding-top:22px}
+.footer-logo{display:flex;align-items:center}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--Y)}
+.footer-copy{font-size:.68rem;color:#333;letter-spacing:1px}
+.footer-copy span{color:var(--Y)}
+.footer-socials{display:flex;gap:8px}
+.footer-social{width:34px;height:34px;background:var(--G2);display:flex;align-items:center;justify-content:center;clip-path:polygon(4px 0,100% 0,calc(100% - 4px) 100%,0 100%);text-decoration:none;transition:background .25s}
+.footer-social:hover{background:var(--Y)}
+.footer-social:hover svg{fill:var(--B)}
+.footer-social svg{width:14px;height:14px;fill:rgba(255,255,255,.3);transition:fill .25s}
+
+/* scroll top */
+
+/* ════════════════════════
+   RESPONSIVE
+════════════════════════ */
+/* ── 1400px+ wide screens ── */
+@media(min-width:1400px){
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  .slide{height:580px}
 }
-.social-link:hover{background:var(--Y);border-color:var(--Y)}
-.social-link:hover svg{fill:var(--B)}
-.social-link svg{width:13px;height:13px;fill:rgba(255,255,255,.35);transition:fill .25s}
 
-/* ── DECORATIVE COUNTER ── */
-.deco-counter{
-  position:fixed;right:52px;top:50%;transform:translateY(-50%);
-  z-index:20;
-  display:flex;flex-direction:column;align-items:center;gap:24px;
-  opacity:0;animation:fadeD 1s 4.2s var(--ease) forwards;
+/* ── 1100-1399px ── */
+@media(max-width:1399px){
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
 }
-.deco-stat{text-align:center}
-.deco-n{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--Y);line-height:1;display:block}
-.deco-l{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--TG);display:block;margin-top:3px}
-.deco-div{width:1px;height:40px;background:linear-gradient(to bottom,var(--Y),transparent)}
-@media(max-width:1024px){.deco-counter{display:none}}
 
-/* corner accent */
-.corner-tl{position:fixed;top:0;left:0;width:120px;height:120px;pointer-events:none;z-index:5;opacity:0;animation:fadeD 1s 3s ease forwards}
-.corner-tl::before{content:'';position:absolute;top:0;left:0;width:40px;height:2px;background:var(--Y)}
-.corner-tl::after{content:'';position:absolute;top:0;left:0;width:2px;height:40px;background:var(--Y)}
-.corner-br{position:fixed;bottom:0;right:0;width:120px;height:120px;pointer-events:none;z-index:5;opacity:0;animation:fadeD 1s 3s ease forwards}
-.corner-br::before{content:'';position:absolute;bottom:0;right:0;width:40px;height:2px;background:var(--Y)}
-.corner-br::after{content:'';position:absolute;bottom:0;right:0;width:2px;height:40px;background:var(--Y)}
+/* ── 1100-1280px: monitores medianos ── */
+@media(max-width:1280px){
+  .site-header{padding:0 32px}
+  .site-nav{gap:2px}
+  .site-nav a{font-size:.68rem;letter-spacing:1.5px;padding:8px 8px}
+  .nav-cta{padding:10px 20px!important;letter-spacing:1.5px!important}
+  .services-section,.why-section,.process-section{padding:90px 48px}
+  .slider-header{padding:70px 48px 40px}
+  .slide{height:440px}
+}
+
+/* ── hasta 1100px ── */
+@media(max-width:1100px){
+  .services-grid{grid-template-columns:1fr 1fr}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .slide{min-width:calc(50% - 2px);height:400px}
+}
+
+/* ── hasta 1024px: tablets landscape ── */
+@media(max-width:1024px){
+  .why-section{grid-template-columns:1fr;gap:56px}
+  .contact-section{grid-template-columns:1fr}
+  .hero-scroll{display:none}
+  .services-section,.why-section,.process-section{padding:80px 40px}
+  .slider-header{padding:60px 40px 36px}
+  .site-footer{padding:48px 40px 24px}
+  .area-section{padding:70px 40px}
+  .site-nav a{font-size:.65rem;letter-spacing:1px;padding:8px 7px}
+  .nav-cta{padding:10px 16px!important;letter-spacing:1px!important}
+}
+
+/* ── hasta 900px ── */
+@media(max-width:900px){
+  .fn-right{display:none}
+  .site-nav a{font-size:.62rem;padding:8px 6px}
+}
+
+/* ── hasta 768px: tablets portrait + mobile ── */
+@media(max-width:768px){
+  :root{--hh:72px}
+  .site-header{padding:0 18px}
+  .site-nav{display:none!important}
+  .site-logo img{height:clamp(56px,16vw,80px)}
+  .hero{min-height:100svh;min-height:100vh}
+  .hero-main{padding:calc(var(--hh) + 40px) 22px 24px;align-items:center;justify-content:center}
+  .hero-content{max-width:100%;text-align:left}
+  .hero-tag{font-size:.6rem;letter-spacing:3px;margin-bottom:16px;flex-wrap:wrap}
+  .hero-h1{font-size:clamp(3.2rem,13vw,5rem);line-height:.84}
+  .hero-sub{font-size:.86rem;max-width:100%;margin-top:18px;line-height:1.65}
+  .hero-actions{margin-top:26px;flex-direction:column;align-items:stretch;gap:10px}
+  .btn-prim,.btn-out{justify-content:center;text-align:center;padding:16px 20px;clip-path:none;width:100%;font-size:.78rem}
+  .hero-slash{display:none}
+  .hero-bg-overlay{background:linear-gradient(to bottom,rgba(8,8,8,.6) 0%,rgba(8,8,8,.2) 40%,rgba(8,8,8,.8) 100%)}
+  .hero-stats{flex-direction:row;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .hero-stats::-webkit-scrollbar{display:none}
+  .stat{flex:0 0 auto;min-width:140px;border-right:1px solid var(--G3);border-bottom:none;padding:14px 18px}
+  .stat:last-child{border-right:none}
+  .stat-n{font-size:1.9rem}
+  .stat-l{font-size:.55rem}
+  .mq-item{font-size:.8rem;padding:0 20px;letter-spacing:3px}
+  .services-section{padding:56px 18px}
+  .services-section::before{font-size:70px}
+  .services-grid{grid-template-columns:1fr}
+  .category-tabs{flex-direction:column;gap:3px}
+  .tab-btn{clip-path:none!important;padding:13px 22px!important;margin-left:0!important;width:100%;text-align:center}
+  .area-section{padding:52px 18px}
+  .area-inner{flex-direction:column;gap:28px}
+  .area-left{width:100%}
+  .slider-section{overflow:hidden}
+  .slider-header{padding:48px 18px 28px;flex-direction:column;align-items:flex-start;gap:16px}
+  .slider-controls{align-self:flex-end}
+  .slide{min-width:calc(100vw - 36px);height:320px;margin-right:10px;border-radius:2px}
+  .slide img{filter:brightness(.78) saturate(.9)}
+  .slide:hover img{filter:brightness(.88) saturate(1)}
+  .slider-dots{padding:18px 0 44px;gap:6px}
+  .slider-dot{width:22px}
+  .slider-dot.active{width:40px}
+  .why-section{padding:56px 18px;grid-template-columns:1fr;gap:40px}
+  .why-grid{grid-template-columns:1fr}
+  .feat-box{padding:28px 20px}
+  .process-section{padding:56px 18px}
+  .process-steps{grid-template-columns:1fr 1fr;gap:3px}
+  .process-header{margin-bottom:40px}
+  .step-card{padding:28px 14px}
+  .step-title{font-size:1.1rem}
+  .step-num-circle{width:58px;height:58px}
+  .step-num{font-size:1.5rem}
+  .contact-section{grid-template-columns:1fr}
+  .contact-left{padding:48px 20px}
+  .contact-left h2{font-size:2.4rem}
+  .contact-right{padding:40px 20px}
+  .form-grid{grid-template-columns:1fr}
+  .sp2{grid-column:span 1}
+  .form-actions{flex-direction:column}
+  .btn-sub,.btn-wa{width:100%;justify-content:center;clip-path:none}
+  .site-footer{padding:36px 18px 20px}
+  .footer-top{flex-direction:column;gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:14px}
+  .footer-col-areas{gap:10px}
+  .footer-col-areas span{font-size:.95rem;letter-spacing:2px}
+  .footer-links{gap:12px;flex-wrap:wrap;justify-content:center}
+  .footer-socials{justify-content:center}
+  .sec-h{font-size:clamp(2.2rem,9vw,3.6rem);margin-bottom:28px}
+  .slider-header .sec-h{margin-bottom:0}
+  .why-desc{font-size:.88rem}
+  .fn-logo img{height:72px}
+}
+
+/* ── hasta 480px: móviles pequeños ── */
+@media(max-width:480px){
+  .hero-h1{font-size:clamp(2.8rem,12vw,3.8rem)}
+  .process-steps{grid-template-columns:1fr}
+  .slide{min-width:calc(100vw - 24px);height:280px}
+  .stat{min-width:120px}
+  .footer-col ul li{font-size:.75rem}
+}
+
+/* ── hasta 360px: móviles muy pequeños ── */
+@media(max-width:360px){
+  .hero-h1{font-size:2.6rem}
+  .hero-sub{font-size:.8rem}
+  .btn-prim,.btn-out{font-size:.72rem;padding:14px 16px}
+  .slide{height:240px}
+  .stat{min-width:105px;padding:12px 12px}
+  .stat-n{font-size:1.6rem}
+}
 </style>
 </head>
 <body>
 
 <!-- SPLASH -->
 <div id="splash">
-  <img id="splash-logo" src="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s600" alt="CAIBO Construction"/>
-  <div id="splash-bar-wrap"><div id="splash-bar"></div></div>
-  <p id="splash-tag">Building What Lasts.</p>
-</div>
-
-<!-- CURSOR -->
-<div class="cursor-outer" id="co"></div>
-<div class="cursor-inner" id="ci"></div>
-
-<!-- CORNER ACCENTS -->
-<div class="corner-tl"></div>
-<div class="corner-br"></div>
-
-<!-- BACKGROUND -->
-<div class="bg">
-  <img src="https://drive.google.com/thumbnail?id=1vNjdEGNJCGO-Tknv-g9mUgE9lt4KfUdR&sz=s1920" alt=""/>
-  <div class="bg-overlay"></div>
-  <div class="bg-line"></div>
-</div>
-
-<!-- DECORATIVE SIDE STATS -->
-<div class="deco-counter">
-  <div class="deco-stat">
-    <span class="deco-n">6+</span>
-    <span class="deco-l">Years</span>
-  </div>
-  <div class="deco-div"></div>
-  <div class="deco-stat">
-    <span class="deco-n">400+</span>
-    <span class="deco-l">Projects</span>
-  </div>
-  <div class="deco-div"></div>
-  <div class="deco-stat">
-    <span class="deco-n">FL</span>
-    <span class="deco-l">Licensed</span>
+  <div id="splash-inner">
+    <img id="splash-logo" src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction" style="display:block;width:clamp(200px,40vw,380px);height:auto;"/>
+    <div id="splash-bar-wrap"><div id="splash-bar"></div></div>
+    <p id="splash-tag">Building What Lasts.</p>
   </div>
 </div>
+<style>
+#splash{position:fixed;inset:0;z-index:99999;background:#080808;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease,visibility .7s ease}
+#splash.hide{opacity:0;visibility:hidden;pointer-events:none}
+#splash-inner{display:flex;flex-direction:column;align-items:center;gap:36px}
+#splash-logo{width:clamp(220px,45vw,420px);height:auto;opacity:0;transform:scale(.85);transition:opacity .9s ease,transform .9s ease;mix-blend-mode:screen}
+#splash-logo.show{opacity:1;transform:scale(1)}
+#splash-bar-wrap{width:clamp(180px,40vw,340px);height:2px;background:rgba(255,255,255,.1);overflow:hidden}
+#splash-bar{height:100%;width:0%;background:var(--Y);transition:width 1.8s cubic-bezier(0.22,1,0.36,1)}
+#splash-bar.run{width:100%}
+#splash-tag{font-family:'Bebas Neue',sans-serif;font-size:clamp(.9rem,2vw,1.1rem);letter-spacing:8px;color:rgba(255,255,255,.35);text-transform:uppercase;opacity:0;transition:opacity .8s ease .5s}
+#splash-tag.show{opacity:1}
+</style>
 
-<!-- PAGE -->
-<div class="page">
+<!-- CUSTOM CURSOR -->
+<div class="cursor-outer" id="cursorOuter"></div>
+<div class="cursor-inner" id="cursorInner"></div>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="topbar-logo">
-      <img src="https://drive.google.com/thumbnail?id=1va1yS6c-BGhyGLncEvpy3EolQseFfsgR&sz=s400" alt="CAIBO Construction Services"/>
-    </div>
-    <div class="topbar-tag">Florida — Licensed &amp; Insured</div>
-  </div>
+<!-- SCROLL TOP -->
 
-  <!-- CENTER -->
-  <div class="center">
-    <div class="content">
-      <div class="eyebrow">Our New Website Is On The Way</div>
-      <h1 class="main-h">
-        <span class="hl"><span class="hl-inner">SOMETHING</span></span>
-        <span class="hl"><span class="hl-inner acc">BIG IS</span></span>
-        <span class="hl"><span class="hl-inner out">COMING.</span></span>
-      </h1>
-      <p class="sub">We're putting the finishing touches on our new site — just like every project we take on. In the meantime, reach out directly for a free estimate.</p>
-      <div class="contact-row">
-        <a href="https://wa.me/19544785582" target="_blank" class="cta-btn">
-          <span>WhatsApp Us</span>
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        </a>
-        <a href="tel:+19544785582" class="wa-btn">
-          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          +1 (954) 478-5582
-        </a>
+<!-- ══════════════════════════════════
+     FLOATING HAMBURGER BUTTON
+══════════════════════════════════ -->
+<button class="fab-menu" id="fabMenu" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- NAV OVERLAY (backdrop) -->
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- FULLSCREEN NAV PANEL -->
+<div class="fullscreen-nav" id="fullscreenNav">
+  <div class="fn-left">
+    <div class="fn-header">
+      <div class="fn-logo">
+        <img src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction" style="display:block;height:90px;width:auto;object-fit:contain;"/>
       </div>
     </div>
-  </div>
-
-  <!-- BOTTOM BAR -->
-  <div class="bottom">
-    <div class="bottom-areas">
-      <span class="bottom-area-label">Areas</span>
-      <span class="bottom-area">Tampa</span>
-      <span class="bottom-area">St. Petersburg</span>
-      <span class="bottom-area">Clearwater</span>
-      <span class="bottom-area">Wesley Chapel</span>
-      <span class="bottom-area">Lakeland</span>
-      <span class="bottom-area">Sarasota</span>
-      <span class="bottom-area">Bradenton</span>
-      <span class="bottom-area">Orlando</span>
-      <span class="bottom-area">Kissimmee</span>
+    <div class="fn-nav-links">
+      <a href="#home" onclick="closeNav()"><span class="fn-num">01</span>Home</a>
+      <a href="#services" onclick="closeNav()"><span class="fn-num">02</span>Services</a>
+      <a href="#service-area" onclick="closeNav()"><span class="fn-num">03</span>Service Area</a>
+      <a href="#why-us" onclick="closeNav()"><span class="fn-num">04</span>Why Us</a>
+      <a href="#process" onclick="closeNav()"><span class="fn-num">05</span>Process</a>
+      <a href="#contact" onclick="closeNav()"><span class="fn-num">06</span>Contact</a>
     </div>
-    <div class="bottom-right">
-      <span class="bottom-copy">&copy; 2026 CAIBO Construction</span>
-      <div class="social-links">
-        <a href="https://www.instagram.com/caiboconstructionservices?igsh=MWE4NmJ2NjJ1aGs1bA%3D%3D&utm_source=qr" target="_blank" class="social-link" aria-label="Instagram">
+    <div class="fn-bottom">
+      <a href="#contact" class="fn-cta-btn" onclick="closeNav()">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        Get a Free Estimate
+      </a>
+      <div class="fn-contact-info">
+        <div class="fn-contact-row">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <a href="tel:+19544785582">+1 (954) 478-5582</a>
+        </div>
+        <div class="fn-contact-row">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:info@caiboconstruction.com">info@caiboconstruction.com</a>
+        </div>
+        <div class="fn-contact-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span>Tampa, Florida</span>
+        </div>
+      </div>
+      <div class="fn-socials">
+        <a href="https://www.instagram.com/caiboconstructionservices?igsh=MWE4NmJ2NjJ1aGs1bA%3D%3D&utm_source=qr" target="_blank" class="fn-social" aria-label="Instagram">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
-        <a href="https://www.facebook.com/share/1HApB7TN6R/?mibextid=wwXIfr" target="_blank" class="social-link" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/1HApB7TN6R/?mibextid=wwXIfr" target="_blank" class="fn-social" aria-label="Facebook">
           <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <a href="https://wa.me/19544785582" target="_blank" class="social-link" aria-label="WhatsApp">
+        <a href="https://wa.me/19544785582" target="_blank" class="fn-social" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </a>
       </div>
     </div>
   </div>
+  <div class="fn-right">
+    <div class="fn-right-bg">
+      <img src="https://drive.google.com/thumbnail?id=1vNjdEGNJCGO-Tknv-g9mUgE9lt4KfUdR&sz=s1920" alt=""/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,var(--G1) 0%,rgba(15,15,15,.3) 100%)"></div>
+    </div>
+    <div class="fn-right-content">
+      <div class="fn-area-title">Service Areas</div>
+      <div class="fn-areas">
+        <span class="fn-area-tag">Tampa</span>
+        <span class="fn-area-tag">St. Petersburg</span>
+        <span class="fn-area-tag">Clearwater</span>
+        <span class="fn-area-tag">Wesley Chapel</span>
+        <span class="fn-area-tag">Lakeland</span>
+        <span class="fn-area-tag">Sarasota</span>
+        <span class="fn-area-tag">Bradenton</span>
+        <span class="fn-area-tag">Orlando</span>
+        <span class="fn-area-tag">Kissimmee</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-</div><!-- /page -->
+<!-- ══ HEADER ══ -->
+<header class="site-header" id="siteHeader">
+  <a href="#home" class="site-logo">
+    <img src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction Services"/>
+  </a>
+  <nav aria-label="Main navigation">
+    <ul class="site-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#service-area">Service Area</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Free Estimate</a></li>
+    </ul>
+  </nav>
+</header>
 
-<script>
-/* CURSOR */
-const co=document.getElementById('co'),ci=document.getElementById('ci');
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://drive.google.com/thumbnail?id=1vNjdEGNJCGO-Tknv-g9mUgE9lt4KfUdR&sz=s1920" alt="CAIBO Construction Services — construction site in Florida"/>
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <div class="hero-slash"></div>
+  <div class="hero-main">
+    <div class="hero-content">
+      <span class="hero-tag">Florida — Residential &amp; Commercial</span>
+      <h1 class="hero-h1">
+        <span class="h1-line"><span class="h1-inner">CONSTRUCTION &amp;</span></span>
+        <span class="h1-line"><span class="h1-inner acc">REMODELING</span></span>
+        <span class="h1-line"><span class="h1-inner outline">DONE RIGHT.</span></span>
+      </h1>
+      <p class="hero-sub">CAIBO Construction Services delivers precision craftsmanship across interior renovations, exterior upgrades, demolition, and full property rehabs throughout Florida.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-prim">
+          <span>Get a Free Quote</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+        <a href="#services" class="btn-out">
+          Our Services
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+  <div class="hero-stats" id="heroStats">
+    <div class="stat">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5v6l5.25 3.15-.75 1.23L11 14V7h1.5z"/></svg></div>
+      <div><div class="stat-n" data-target="6" data-suffix="+">0</div><div class="stat-l">Years Experience</div></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <div><div class="stat-n" data-target="400" data-suffix="+">0</div><div class="stat-l">Projects Completed</div></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+      <div><div class="stat-n" data-target="100" data-suffix="%">0</div><div class="stat-l">Satisfaction Rate</div></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+      <div><div class="stat-n" data-target="100" data-suffix="%">0</div><div class="stat-l">Licensed &amp; Insured</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mq-item"><span class="mq-dot"></span>Interior Renovation</span>
+    <span class="mq-item"><span class="mq-dot"></span>Exterior Remodeling</span>
+    <span class="mq-item"><span class="mq-dot"></span>Demolition Services</span>
+    <span class="mq-item"><span class="mq-dot"></span>Property Maintenance</span>
+    <span class="mq-item"><span class="mq-dot"></span>Kitchen &amp; Bathroom</span>
+    <span class="mq-item"><span class="mq-dot"></span>Flooring &amp; Drywall</span>
+    <span class="mq-item"><span class="mq-dot"></span>Fence &amp; Deck Install</span>
+    <span class="mq-item"><span class="mq-dot"></span>Full Property Rehabs</span>
+    <span class="mq-item"><span class="mq-dot"></span>Interior Renovation</span>
+    <span class="mq-item"><span class="mq-dot"></span>Exterior Remodeling</span>
+    <span class="mq-item"><span class="mq-dot"></span>Demolition Services</span>
+    <span class="mq-item"><span class="mq-dot"></span>Property Maintenance</span>
+    <span class="mq-item"><span class="mq-dot"></span>Kitchen &amp; Bathroom</span>
+    <span class="mq-item"><span class="mq-dot"></span>Flooring &amp; Drywall</span>
+    <span class="mq-item"><span class="mq-dot"></span>Fence &amp; Deck Install</span>
+    <span class="mq-item"><span class="mq-dot"></span>Full Property Rehabs</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="sec-label reveal from-left">What We Do</div>
+  <h2 class="sec-h reveal d1">OUR <span>SERVICES</span></h2>
+  <div class="category-tabs reveal d2">
+    <button class="tab-btn residential active" onclick="switchTab('residential')">Residential</button>
+    <button class="tab-btn commercial" onclick="switchTab('commercial')">Commercial</button>
+  </div>
+  <div class="services-grid active" id="grid-residential">
+    <div class="service-card reveal from-bottom d1">
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1fIHLl8Uk2NFmouU5rlcvYE-2ILyw2aeT&sz=s1200" alt="Interior renovation services Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+        <div class="card-num">01</div>
+        <div class="card-title">Interior Remodeling &amp; Repairs</div>
+        <p class="card-desc">Drywall installation, interior painting, flooring, kitchen &amp; bathroom upgrades, trim carpentry and premium finish work.</p>
+        <a href="#contact" class="card-link">Request Quote</a>
+      </div>
+    </div>
+    <div class="service-card reveal from-bottom d2">
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1CcZYesejXc3QOBYFaUvFgOZWmCrVGyiX&sz=s1200" alt="Exterior remodeling services Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.51-1.2 1.06-2.35 1.66-3.42C9.4 17.5 11.61 17 14 17c4.42 0 8-3.58 8-8V7A24 24 0 0117 8z"/></svg></div>
+        <div class="card-num">02</div>
+        <div class="card-title">Exterior Construction and Upgrades</div>
+        <p class="card-desc">Window &amp; door installation, deck &amp; patio remodeling, pressure washing, landscaping, tree trimming and fence installation.</p>
+        <a href="#contact" class="card-link">Request Quote</a>
+      </div>
+    </div>
+    <div class="service-card reveal from-bottom d3">
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=19F_aOQLsV8Ras6i4gU8ViLI0zsx1fv7s&sz=s1200" alt="Demolition services Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7C5.9 5 5 5.9 5 7v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"/></svg></div>
+        <div class="card-num">03</div>
+        <div class="card-title">Demolition Services</div>
+        <p class="card-desc">Interior demolition, safe site preparation, full debris removal and structural selective takedown — done clean and fast.</p>
+        <a href="#contact" class="card-link">Schedule Now</a>
+      </div>
+    </div>
+  </div>
+  <div class="services-grid" id="grid-commercial">
+    <div class="service-card reveal from-bottom d1">
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=1VqhdaV0vvCsxopdpaICFpcd0-FXypibS&sz=s1200" alt="Property maintenance and rehab Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div>
+        <div class="card-num">01</div>
+        <div class="card-title">General Construction &amp; Repairs</div>
+        <p class="card-desc">Full property maintenance, rental turnovers, complete rehabs and real estate investor project management.</p>
+        <a href="#contact" class="card-link">Discuss Project</a>
+      </div>
+    </div>
+    <div class="service-card reveal from-bottom d2">
+      <div class="card-img-wrap"><img class="card-img" src="https://drive.google.com/thumbnail?id=16eUSqKQYC7eefWIAeGdXi1YRvBd6jvir&sz=s1200" alt="Commercial construction Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+        <div class="card-num">02</div>
+        <div class="card-title">Commercial Construction</div>
+        <p class="card-desc">Office fit-outs, retail renovations, warehouse conversions and large-scale commercial project execution in Florida.</p>
+        <a href="#contact" class="card-link">Request Quote</a>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <div class="card-img-wrap"><img class="card-img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Subcontracting services Florida"/></div>
+      <div class="card-body">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div>
+        <div class="card-num">03</div>
+        <div class="card-title">Remodeling &amp; Renovations</div>
+        <p class="card-desc">Reliable subcontracting for general contractors. Professional crews, consistent quality and on-time delivery.</p>
+        <a href="#contact" class="card-link">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="area-section" id="service-area">
+  <div class="area-inner">
+    <div class="area-left reveal from-left">
+      <div class="sec-label">Coverage</div>
+      <h3>SERVICE<br><span>AREA</span></h3>
+    </div>
+    <div class="area-tags reveal from-right d1">
+      <span class="area-tag">Tampa</span>
+      <span class="area-tag">St. Petersburg</span>
+      <span class="area-tag">Clearwater</span>
+      <span class="area-tag">Wesley Chapel</span>
+      <span class="area-tag">Lakeland</span>
+      <span class="area-tag">Sarasota</span>
+      <span class="area-tag">Bradenton</span>
+      <span class="area-tag">Orlando</span>
+      <span class="area-tag">Kissimmee</span>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO SLIDER -->
+<section class="slider-section" aria-label="Project gallery">
+  <div class="slider-progress"><div class="slider-progress-bar" id="sliderProgressBar"></div></div>
+  <div class="slider-header">
+    <div class="slider-header-text">
+      <div class="sec-label reveal from-left">Our Work</div>
+      <h2 class="sec-h reveal d1">PROJECTS <span>GALLERY</span></h2>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="slidePrev" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button class="slider-btn" id="slideNext" aria-label="Next slide">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="slider-track-wrap">
+    <div class="slider-track" id="sliderTrack">
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1e97UTZh8UISDMmOvPxCeCValwbQP9hev" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1iDp3tP7hAOnueBLzv7T3n93e0claoZih" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/15cicKFaWwoLTAmwO4Xdu_TZ9shcGHClU" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1hs7eiZYQLs6gv9IUtuB2rfztsim7Miil" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1Z3ny7tnRShEkuaySpKzWpMawNuhXMugt" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1LKan-nC5oja3NtQuJxX5hsF6kGYfNQb3" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1U7sel5Y-TstBW-Tua3pfapDe0VL3_-pi" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1SCCwYAgCDrqVhyAYoFQb7NoPe5CY0SSB" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1xaScVBmgAWfd2LFfAUIb7yGPdu1YG15r" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1ofF5l4lGMfghBCemAx63EvENCu25Pg9x" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+      <div class="slide"><img src="https://lh3.googleusercontent.com/d/1U_YFCaKhkcaA9-NkY2nb2wG4XCdrhVxn" alt="CAIBO Construction project" crossorigin="anonymous"/></div>
+    </div>
+  </div>
+  <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why-us">
+  <div class="reveal from-left">
+    <div class="sec-label">Why Choose Us</div>
+    <h2 class="sec-h">PROVEN<br><span>RESULTS.</span></h2>
+    <p class="why-desc">CAIBO Construction Services operates on the principles of precision and structural integrity. Every residential or commercial project meets rigorous industry standards — on time, on budget, every time.</p>
+    <a href="#contact" class="btn-prim">
+      <span>Consult an Expert</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+    </a>
+  </div>
+  <div class="why-grid reveal from-right">
+    <div class="feat-box">
+      <div class="feat-ico-wrap"><svg class="feat-ico" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
+      <h4>Structural Integrity</h4><p>Advanced methodology on every renovation for long-term stability and safety.</p>
+    </div>
+    <div class="feat-box">
+      <div class="feat-ico-wrap"><svg class="feat-ico" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div>
+      <h4>Technical Precision</h4><p>Industrial-grade tools and techniques for superior results every time.</p>
+    </div>
+    <div class="feat-box">
+      <div class="feat-ico-wrap"><svg class="feat-ico" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+      <h4>On-Time Delivery</h4><p>Strict project management protocols to eliminate delays on every job.</p>
+    </div>
+    <div class="feat-box">
+      <div class="feat-ico-wrap"><svg class="feat-ico" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM17 17H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+      <h4>Zero Hidden Costs</h4><p>Comprehensive quotes and transparent reporting from start to finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="process-header">
+    <div class="sec-label reveal">How We Work</div>
+    <h2 class="sec-h reveal d1" style="margin-bottom:0">OUR <span>PROCESS</span></h2>
+  </div>
+  <div class="process-steps">
+    <div class="step-card reveal from-bottom d1">
+      <div class="step-num-circle"><div class="step-num">01</div></div>
+      <svg class="step-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
+      <div class="step-title">Consultation</div>
+      <p class="step-desc">We discuss your project goals, budget and timeline. Free on-site assessment included for every client.</p>
+    </div>
+    <div class="step-card reveal from-bottom d2">
+      <div class="step-num-circle"><div class="step-num">02</div></div>
+      <svg class="step-icon" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+      <div class="step-title">Detailed Quote</div>
+      <p class="step-desc">Clear itemized proposal with exact costs — no surprises, no hidden fees, full transparency guaranteed.</p>
+    </div>
+    <div class="step-card reveal from-bottom d3">
+      <div class="step-num-circle"><div class="step-num">03</div></div>
+      <svg class="step-icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+      <div class="step-title">Execution</div>
+      <p class="step-desc">Our crew gets to work with professional tools, materials and strict quality control at every stage.</p>
+    </div>
+    <div class="step-card reveal from-bottom d4">
+      <div class="step-num-circle"><div class="step-num">04</div></div>
+      <svg class="step-icon" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <div class="step-title">Delivery</div>
+      <p class="step-desc">Final walkthrough, sign-off and post-project support to ensure 100% satisfaction on every job.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left reveal from-left">
+    <div>
+      <div class="contact-left-label">Get In Touch</div>
+      <h2>FREE<br>ESTIMATE</h2>
+      <p class="contact-left-sub">Fill out the form and we'll get back to you within 24 hours. Prefer to talk now? Reach us directly.</p>
+    </div>
+    <div class="c-info">
+      <div class="c-info-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div><strong>Phone</strong><span>+1 (954) 478-5582</span></div>
+      </div>
+      <div class="c-info-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div><strong>Location</strong><span>Tampa, Florida</span></div>
+      </div>
+      <div class="c-info-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <div><strong>Our Hours</strong><span>8:00 AM – 8:00 PM</span></div>
+      </div>
+      <div class="c-info-item">
+        <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <div><strong>Response Time</strong><span>Within 24 hours</span></div>
+      </div>
+    </div>
+    <div class="contact-socials">
+      <a href="https://www.instagram.com/caiboconstructionservices?igsh=MWE4NmJ2NjJ1aGs1bA%3D%3D&utm_source=qr" target="_blank" class="contact-social" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1HApB7TN6R/?mibextid=wwXIfr" target="_blank" class="contact-social" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+    <div class="contact-left-deco"></div>
+  </div>
+  <div class="contact-right reveal from-right">
+    <h3>REQUEST A <span>FREE QUOTE</span></h3>
+    <div class="form-grid">
+      <div class="ff"><label for="fname">First Name</label><input type="text" id="fname" name="fname" placeholder="John" autocomplete="given-name"/></div>
+      <div class="ff"><label for="lname">Last Name</label><input type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name"/></div>
+      <div class="ff"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel"/></div>
+      <div class="ff"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email"/></div>
+      <div class="ff sp2">
+        <label for="service">Service Needed</label>
+        <select id="service" name="service">
+          <option value="" disabled selected>Select a service...</option>
+          <optgroup label="Interior">
+            <option>Interior Remodeling &amp; Repairs</option>
+            <option>Kitchen &amp; Bathroom Remodel</option>
+            <option>Flooring Installation</option>
+            <option>Drywall Installation &amp; Repair</option>
+            <option>Interior Painting</option>
+          </optgroup>
+          <optgroup label="Exterior">
+            <option>Exterior Construction and Upgrades</option>
+            <option>Exterior Painting &amp; Finishing</option>
+            <option>Roofing &amp; Siding</option>
+          </optgroup>
+          <optgroup label="Other Services">
+            <option>Demolition Services</option>
+            <option>General Construction &amp; Repairs</option>
+            <option>Commercial Construction</option>
+            <option>Remodeling &amp; Renovations</option>
+            <option>Other Services</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="ff sp2"><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Tell us about your project — location, size, timeline..."></textarea></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn-sub" onclick="sendEmail()">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Send via Email
+      </button>
+      <button class="btn-wa" onclick="sendWhatsApp()">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </button>
+    </div>
+    <p class="form-note">We respond within 24 hours &nbsp;·&nbsp; Free estimates &nbsp;·&nbsp; No commitment required</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="https://lh3.googleusercontent.com/d/1Mif1lechjAr2B0_rRs3sLc6ci7e7xKTa" alt="CAIBO Construction Services" style="height:90px;width:auto;object-fit:contain;"/>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Our Services</div>
+      <ul>
+        <li>Interior Remodeling &amp; Repairs</li>
+        <li>Exterior Construction and Upgrades</li>
+        <li>Demolition Services</li>
+        <li>General Construction &amp; Repairs</li>
+        <li>Commercial Construction</li>
+        <li>Remodeling &amp; Renovations</li>
+      </ul>
+    </div>
+    <div class="footer-col" style="min-width:220px">
+      <div class="footer-col-title">Service Areas</div>
+      <div class="footer-col-areas">
+        <span>Tampa</span>
+        <span>St. Petersburg</span>
+        <span>Clearwater</span>
+        <span>Wesley Chapel</span>
+        <span>Lakeland</span>
+        <span>Sarasota</span>
+        <span>Bradenton</span>
+        <span>Orlando</span>
+        <span>Kissimmee</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#service-area">Service Area</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/caiboconstructionservices?igsh=MWE4NmJ2NjJ1aGs1bA%3D%3D&utm_source=qr" target="_blank" class="footer-social" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1HApB7TN6R/?mibextid=wwXIfr" target="_blank" class="footer-social" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
+    <div class="footer-copy">&copy; 2026 <span>CAIBO CONSTRUCTION</span> | FLORIDA, USA</div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── CURSOR ── */
+const co=document.getElementById('cursorOuter'),ci=document.getElementById('cursorInner');
 let mx=-100,my=-100,ox=-100,oy=-100;
-const mob=()=>window.innerWidth<=768;
+const isMob=()=>window.innerWidth<=768;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function loop(){
-  if(!mob()){ox+=(mx-ox)*.13;oy+=(my-oy)*.13;co.style.cssText=`left:${ox}px;top:${oy}px;opacity:1`;ci.style.cssText=`left:${mx}px;top:${my}px;opacity:1`;}
+(function animC(){
+  if(!isMob()){ox+=(mx-ox)*.12;oy+=(my-oy)*.12;co.style.cssText=`left:${ox}px;top:${oy}px;opacity:1`;ci.style.cssText=`left:${mx}px;top:${my}px;opacity:1`;}
   else{co.style.opacity='0';ci.style.opacity='0';}
-  requestAnimationFrame(loop);
+  requestAnimationFrame(animC);
 })();
-document.querySelectorAll('a,button,.bottom-area,.social-link').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{if(!mob())document.body.classList.add('c-hover')});
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('c-hover'));
+document.querySelectorAll('a,button,.service-card,.feat-box,.step-card,.slide,.tab-btn,.area-tag,.fn-area-tag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{if(!isMob())document.body.classList.add('cursor-hover')});
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
 });
-document.addEventListener('mousedown',()=>document.body.classList.add('c-click'));
-document.addEventListener('mouseup',()=>document.body.classList.remove('c-click'));
+document.addEventListener('mousedown',()=>document.body.classList.add('cursor-click'));
+document.addEventListener('mouseup',()=>document.body.classList.remove('cursor-click'));
 
-/* SPLASH */
+/* ── FLOATING NAV ── */
+const fabMenu=document.getElementById('fabMenu');
+const fullNav=document.getElementById('fullscreenNav');
+const navOverlay=document.getElementById('navOverlay');
+let navOpen=false;
+
+function openNav(){
+  navOpen=true;
+  fabMenu.classList.add('open');
+  fullNav.classList.add('open');
+  navOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeNav(){
+  navOpen=false;
+  fabMenu.classList.remove('open');
+  fullNav.classList.remove('open');
+  navOverlay.classList.remove('open');
+  document.body.style.overflow='';
+}
+fabMenu.addEventListener('click',e=>{e.stopPropagation();navOpen?closeNav():openNav()});
+navOverlay.addEventListener('click',closeNav);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navOpen)closeNav()});
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+/* ── SCROLL ANIMATIONS ── */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');ro.unobserve(en.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+/* ── SCROLL TOP ── */
+
+/* ── HEADER SCROLL ── */
+const hdr=document.getElementById('siteHeader');
+window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>60));
+
+/* ── TAB SWITCHING ── */
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.services-grid').forEach(g=>g.classList.remove('active'));
+  document.querySelector('.tab-btn.'+tab).classList.add('active');
+  const grid=document.getElementById('grid-'+tab);
+  grid.classList.add('active');
+  grid.querySelectorAll('.reveal').forEach((el,i)=>{el.classList.remove('visible');setTimeout(()=>el.classList.add('visible'),i*100);});
+}
+
+/* ── SLIDER ── */
 (function(){
-  const s=document.getElementById('splash');
-  const l=document.getElementById('splash-logo');
-  const b=document.getElementById('splash-bar');
-  const t=document.getElementById('splash-tag');
-  requestAnimationFrame(()=>{l.classList.add('show');t.classList.add('show');setTimeout(()=>b.classList.add('run'),80);});
-  setTimeout(()=>s.classList.add('hide'),2600);
-  setTimeout(()=>s.remove(),3500);
+  const track=document.getElementById('sliderTrack');
+  const dotsW=document.getElementById('sliderDots');
+  const prev=document.getElementById('slidePrev');
+  const next=document.getElementById('slideNext');
+  const prog=document.getElementById('sliderProgressBar');
+  const slides=track.querySelectorAll('.slide');
+  const total=slides.length;
+  let cur=0,autoT=null;
+  const INTERVAL=6000;
+  function spv(){if(window.innerWidth<=768)return 1;return 2;}
+  function goTo(idx){
+    const v=spv(),max=total-v;
+    cur=Math.max(0,Math.min(idx,max));
+    track.style.transform=`translateX(-${(100/v)*cur}%)`;
+    dotsW.querySelectorAll('.slider-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+    startProg();
+  }
+  function goNext(){goTo(cur+1>total-spv()?0:cur+1);}
+  function goPrev(){goTo(cur-1<0?total-spv():cur-1);}
+  function buildDots(){
+    dotsW.innerHTML='';
+    const v=spv(),count=total-v+1;
+    for(let i=0;i<count;i++){
+      const d=document.createElement('div');
+      d.className='slider-dot'+(i===cur?' active':'');
+      d.onclick=()=>{goTo(i);resetAuto();};
+      dotsW.appendChild(d);
+    }
+  }
+  function startProg(){prog.style.transition='none';prog.style.width='0%';void prog.offsetWidth;prog.style.transition=`width ${INTERVAL}ms linear`;prog.style.width='100%';}
+  function resetAuto(){clearInterval(autoT);autoT=setInterval(goNext,INTERVAL);startProg();}
+  buildDots();goTo(0);resetAuto();
+  next.addEventListener('click',()=>{goNext();resetAuto();});
+  prev.addEventListener('click',()=>{goPrev();resetAuto();});
+  let tx=0;
+  track.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40){dx<0?goNext():goPrev();resetAuto();}},{passive:true});
+  let rt;
+  window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{buildDots();goTo(0);},200);});
+})();
+
+/* ── FORM ── */
+function getFormData(){return{fname:document.getElementById('fname').value.trim(),lname:document.getElementById('lname').value.trim(),phone:document.getElementById('phone').value.trim(),email:document.getElementById('email').value.trim(),service:document.getElementById('service').value,message:document.getElementById('message').value.trim()};}
+function sendWhatsApp(){
+  const d=getFormData(),name=[d.fname,d.lname].filter(Boolean).join(' ')||'N/A';
+  const lines=[`Hi CAIBO Construction! I'd like a free estimate.`,``,`*Name:* ${name}`,d.phone?`*Phone:* ${d.phone}`:null,d.email?`*Email:* ${d.email}`:null,d.service?`*Service:* ${d.service}`:null,d.message?`*Details:* ${d.message}`:null].filter(l=>l!==null).join('\n');
+  window.open(`https://wa.me/19544785582?text=${encodeURIComponent(lines)}`,'_blank');
+}
+function sendEmail(){
+  const d=getFormData(),name=[d.fname,d.lname].filter(Boolean).join(' ')||'N/A';
+  const sub=`Free Estimate – ${d.service||'Construction Service'}`;
+  const body=[`Hi CAIBO Team,`,``,`I'd like to request a free estimate.`,``,`Name: ${name}`,d.phone?`Phone: ${d.phone}`:null,d.email?`Reply Email: ${d.email}`:null,d.service?`Service: ${d.service}`:null,d.message?`\nDetails:\n${d.message}`:null].filter(l=>l!==null).join('\n');
+  window.location.href=`mailto:info@caiboconstruction.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+}
+
+/* ── STATS COUNTER ANIMATION ── */
+(function(){
+  const counters = document.querySelectorAll('.stat-n[data-target]');
+  let animated = false;
+  function animateCounters(){
+    if(animated) return;
+    animated = true;
+    counters.forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = target >= 100 ? 1800 : 1200;
+      const steps = 60;
+      const increment = target / steps;
+      let current = 0;
+      const timer = setInterval(() => {
+        current += increment;
+        if(current >= target){
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current) + suffix;
+      }, duration / steps);
+    });
+  }
+  /* Observar cuando el hero-stats entra en vista */
+  const statsEl = document.getElementById('heroStats');
+  if(statsEl){
+    const obs = new IntersectionObserver(entries => {
+      if(entries[0].isIntersecting) animateCounters();
+    }, {threshold: 0.3});
+    obs.observe(statsEl);
+  }
+
+})();
+(function(){
+  const splash=document.getElementById('splash');
+  const logo=document.getElementById('splash-logo');
+  const bar=document.getElementById('splash-bar');
+  const tag=document.getElementById('splash-tag');
+  requestAnimationFrame(()=>{
+    logo.classList.add('show');
+    tag.classList.add('show');
+    setTimeout(()=>bar.classList.add('run'),100);
+  });
+  setTimeout(()=>splash.classList.add('hide'),2800);
 })();
 </script>
 </body>
