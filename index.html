@@ -409,10 +409,6 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 .footer-social svg{width:14px;height:14px;fill:rgba(255,255,255,.3);transition:fill .25s}
 
 /* scroll top */
-.scroll-top{position:fixed;bottom:102px;right:32px;width:40px;height:40px;background:var(--Y);clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%);display:flex;align-items:center;justify-content:center;z-index:700;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;border:none}
-.scroll-top.show{opacity:1;pointer-events:all}
-.scroll-top:hover{transform:translateY(-4px)}
-.scroll-top svg{width:20px;height:20px;fill:var(--B)}
 
 /* ════════════════════════
    RESPONSIVE
@@ -495,7 +491,6 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
   .footer-col-areas span{font-size:.95rem;letter-spacing:2px}
   .footer-links{gap:12px;flex-wrap:wrap;justify-content:center}
   .footer-socials{justify-content:center}
-  .scroll-top{bottom:88px;right:20px;width:36px;height:36px;clip-path:none;border-radius:3px}
   .sec-h{font-size:clamp(2.2rem,9vw,3.6rem);margin-bottom:28px}
   .slider-header .sec-h{margin-bottom:0}
   .why-desc{font-size:.88rem}
@@ -535,9 +530,6 @@ body.cursor-click .cursor-inner{width:14px;height:14px}
 <div class="cursor-inner" id="cursorInner"></div>
 
 <!-- SCROLL TOP -->
-<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-</button>
 
 <!-- ══════════════════════════════════
      FLOATING HAMBURGER BUTTON
@@ -1104,8 +1096,6 @@ const ro=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
 /* ── SCROLL TOP ── */
-const stb=document.getElementById('scrollTop');
-window.addEventListener('scroll',()=>stb.classList.toggle('show',scrollY>400));
 
 /* ── HEADER SCROLL ── */
 const hdr=document.getElementById('siteHeader');
@@ -1211,15 +1201,6 @@ function sendEmail(){
     obs.observe(statsEl);
   }
 
-  /* AUTO-SCROLL en mobile: desplaza suavemente entre stats */
-  if(window.innerWidth <= 768 && statsEl){
-    let idx = 0;
-    const stats = statsEl.querySelectorAll('.stat');
-    setInterval(() => {
-      idx = (idx + 1) % stats.length;
-      stats[idx].scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
-    }, 2500);
-  }
 })();
 (function(){
   const splash=document.getElementById('splash');
